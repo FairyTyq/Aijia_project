@@ -26,3 +26,6 @@ redis_options = dict(
     port = 6379
 )
 
+# 日志
+log_file = os.path.join(os.path.dirname(__file__),"logs/log")
+log_level = "debug"

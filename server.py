@@ -35,6 +35,8 @@ class Application(tornado.web.Application):
         self.redis = redis.StrictRedis(**config.redis_options)
 
 def main():
+    options.log_file_prefix = config.log_file
+    options.logging = config.log_level
     tornado.options.parse_command_line()
     app = Application(
         handlers,**config.settings

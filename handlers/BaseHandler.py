@@ -16,7 +16,7 @@ class BaseHandler(RequestHandler):
         pass
 
     def write_error(self,status_code,**kwargs):
-        pas
+        pass
 
     def set_default_headers(self):
         pass

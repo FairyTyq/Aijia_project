@@ -1,7 +1,7 @@
 # coding:utf-8
-from handlers import Passport
+from handlers import Passport,VerifyCode
 
 handlers = [
-        (r'/',Passport.IndexHandler),        
-        
+        (r'/',Passport.IndexHandler),
+        (r'/api/imagecode',VerifyCode.ImageCodeHandler),
 ]
