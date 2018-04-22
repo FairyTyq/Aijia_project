@@ -1,5 +1,7 @@
 # coding:utf-8
 
+import json
+
 from tornado.web import RequestHandler
 
 class BaseHandler(RequestHandler):
@@ -13,13 +15,17 @@ class BaseHandler(RequestHandler):
         return self.application.redis
     
     def prepare(self):
-        pass
+        self.xsrf_token
+        if self.request.headers.get("Content-Type","").startswith("application/json"):
+            self.json_args = json.loads(self.request.body)
+        else:
+            self.json_args = None
 
     def write_error(self,status_code,**kwargs):
         pass
 
     def set_default_headers(self):
-        pass
+        self.set_header("Content-Type","application/json;charset=UTF-8")
 
     def initialize(self):
         pass

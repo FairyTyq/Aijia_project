@@ -1,4 +1,4 @@
-function getCookie(name) {
+function getCookie(name) { 
     var r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
     return r ? r[1] : undefined;
 }
@@ -19,9 +19,10 @@ function generateUUID() {
 }
 
 function generateImageCode() {
-    var picId = generateUUID();
-    $(".image-code img").attr("src", "/api/piccode?pre="+imageCodeId+"&cur="+picId);
-    imageCodeId = picId;
+    var preImageCodeId = imageCodeId;
+    imageCodeId = generateUUID();
+    $(".image-code img").attr("src", "/api/imagecode?pcodeid="+preImageCodeId+"&codeid="+imageCodeId);
+    //imageCodeId = picId;
 }
 
 function sendSMSCode() {
@@ -64,14 +65,14 @@ function sendSMSCode() {
     //             }, 1000, 60);
     //         }
     // }, 'json');
-    var data = {mobile:mobile, piccode:imageCode, piccode_id:imageCodeId};
+    var req_data = {mobile:mobile, image_code_text:imageCode, image_code_id:imageCodeId};
     $.ajax({
         url: "/api/smscode",
         method: "POST",
         headers: {
             "X-XSRFTOKEN": getCookie("_xsrf"),
         },
-        data: JSON.stringify(data),
+        data: JSON.stringify(req_data),
         contentType: "application/json",
         dataType: "json",
         success: function (data) {
