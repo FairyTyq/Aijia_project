@@ -51,13 +51,13 @@ class SMSCodeHandler(BaseHandler):
         if not all((mobile,image_code_id,image_code_text)):
             return self.write(dict(errno=RET.PARAMERR,errmsg="参数不完整"))
         if not re.match(r'1\d{10}',mobile):
-            return self.write(dict(errno=RET.PARAMERR),errmsg="手机号不正确")
+            return self.write(dict(errno=RET.PARAMERR,errmsg="手机号不正确"))
         # 判断图片验证码
         try:
             real_image_code_text = self.redis.get("image_code_%s"%image_code_id)
         except Exception as e:
             logging.error(e)
-            return self.write(dict(errno=RET.DBERR),errmsg="查询出错")
+            return self.write(dict(errno=RET.DBERR,errmsg="查询出错"))
         if not real_image_code_text:
             return self.write(dict(errno=RET.NODATA,errmsg="验证码已过期！"))
         if real_image_code_text.lower() != image_code_text.lower():
@@ -71,7 +71,7 @@ class SMSCodeHandler(BaseHandler):
             return self.write(dict(errno=RET.DBERR,errmsg="生成短信验证码错误"))
         # 发送短信
         try:
-            ccp.sendTemplateSMS(mobile,[sms_code,constants.SMS_CODE_EXPIRES_SECONDS],1)
+            ccp.sendTemplateSMS(mobile,[sms_code,constants.SMS_CODE_EXPIRES_SECONDS/60],1)
         except Exception as e:
             logging.error(e)
         self.write(dict(errno=RET.OK,errmsg="OK"))

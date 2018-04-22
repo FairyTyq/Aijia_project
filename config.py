@@ -29,3 +29,7 @@ redis_options = dict(
 # 日志
 log_file = os.path.join(os.path.dirname(__file__),"logs/log")
 log_level = "debug"
+
+# session数据有效期  单位：秒
+session_expires = 86400
+

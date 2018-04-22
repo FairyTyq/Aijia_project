@@ -65,7 +65,10 @@ function sendSMSCode() {
     //             }, 1000, 60);
     //         }
     // }, 'json');
-    var req_data = {mobile:mobile, image_code_text:imageCode, image_code_id:imageCodeId};
+    var req_data = {mobile:mobile,
+        image_code_text:imageCode, 
+        image_code_id:imageCodeId
+    };
     $.ajax({
         url: "/api/smscode",
         method: "POST",
@@ -80,7 +83,7 @@ function sendSMSCode() {
             //     errcode
             //     errmsg
             // }
-            if ("0" == data.errcode) {
+            if ("0" == data.errno) {
                 var duration = 60;
                 var timeObj = setInterval(function () {
                     duration = duration - 1;
@@ -171,7 +174,7 @@ $(document).ready(function() {
                 "X-XSRFTOKEN": getCookie("_xsrf"),
             },
             success: function (data) {
-                if ("0" == data.errcode) {
+                if ("0" == data.errno) {
                     location.href = "/";
                 } else if ("验证码过期" == data.errmsg || "验证码错误" == data.errmsg) {
                     $("#phone-code-err>span").html(data.errmsg);

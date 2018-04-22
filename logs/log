@@ -248,3 +248,222 @@
 [I 180421 19:01:42 web:2106] 200 POST /api/smscode (127.0.0.1) 514.96ms
 [I 180421 19:07:13 autoreload:196] /home/min/tonado_project/constants.py modified; restarting server
 [I 180421 19:10:36 autoreload:196] /home/min/tonado_project/handlers/VerifyCode.py modified; restarting server
+[I 180421 23:36:18 web:2106] 304 GET /register.html (127.0.0.1) 63.30ms
+[I 180421 23:36:19 web:2106] 304 GET /static/plugins/font-awesome/css/font-awesome.min.css (127.0.0.1) 105.24ms
+[I 180421 23:36:19 web:2106] 304 GET /static/plugins/bootstrap/css/bootstrap.min.css (127.0.0.1) 93.35ms
+[I 180421 23:36:19 web:2106] 304 GET /static/css/ihome/register.css (127.0.0.1) 53.13ms
+[I 180421 23:36:19 web:2106] 304 GET /static/js/jquery.min.js (127.0.0.1) 17.76ms
+[I 180421 23:36:19 web:2106] 304 GET /static/css/ihome/main.css (127.0.0.1) 19.04ms
+[I 180421 23:36:19 web:2106] 304 GET /static/css/reset.css (127.0.0.1) 86.70ms
+[I 180421 23:36:19 web:2106] 304 GET /static/plugins/bootstrap/js/bootstrap.min.js (127.0.0.1) 43.67ms
+[I 180421 23:36:19 web:2106] 304 GET /static/images/logo@128x59.png (127.0.0.1) 60.17ms
+[I 180421 23:36:19 web:2106] 304 GET /static/js/ihome/register.js (127.0.0.1) 1.36ms
+[I 180421 23:36:20 web:2106] 200 GET /api/imagecode?pcodeid=&codeid=65572ecb-8c68-47f0-96a3-49d0a367d7e8 (127.0.0.1) 519.24ms
+[I 180421 23:36:20 web:2106] 200 GET /favicon.ico (127.0.0.1) 14.27ms
+[I 180421 23:36:29 web:2106] 304 GET /static/plugins/bootstrap/css/bootstrap.min.css.map (127.0.0.1) 24.70ms
+[I 180421 23:36:49 web:2106] 200 POST /api/smscode (127.0.0.1) 901.79ms
+[I 180421 23:49:12 web:2106] 304 GET /register.html (127.0.0.1) 15.91ms
+[I 180421 23:49:13 web:2106] 200 GET /api/imagecode?pcodeid=&codeid=9093e9e8-6714-4485-9888-c66fa350a271 (127.0.0.1) 29.40ms
+[I 180421 23:49:42 web:2106] 200 GET /api/imagecode?pcodeid=9093e9e8-6714-4485-9888-c66fa350a271&codeid=386ab711-fb99-4ccc-b51b-4ab7299c094a (127.0.0.1) 27.09ms
+[I 180421 23:49:50 web:2106] 200 POST /api/smscode (127.0.0.1) 1368.39ms
+[I 180421 23:50:56 web:2106] 200 GET /register.html (127.0.0.1) 140.50ms
+[I 180421 23:50:57 web:2106] 200 GET /static/css/reset.css (127.0.0.1) 601.05ms
+[I 180421 23:50:57 web:2106] 200 GET /static/css/ihome/main.css (127.0.0.1) 366.70ms
+[I 180421 23:50:57 web:2106] 200 GET /static/css/ihome/register.css (127.0.0.1) 290.88ms
+[I 180421 23:50:57 web:2106] 200 GET /static/plugins/bootstrap/css/bootstrap.min.css (127.0.0.1) 776.90ms
+[I 180421 23:50:57 web:2106] 200 GET /static/plugins/font-awesome/css/font-awesome.min.css (127.0.0.1) 188.92ms
+[I 180421 23:50:57 web:2106] 200 GET /static/js/jquery.min.js (127.0.0.1) 262.14ms
+[I 180421 23:50:57 web:2106] 200 GET /static/images/logo@128x59.png (127.0.0.1) 269.91ms
+[I 180421 23:50:57 web:2106] 200 GET /static/js/ihome/register.js (127.0.0.1) 112.43ms
+[I 180421 23:50:57 web:2106] 200 GET /static/plugins/bootstrap/js/bootstrap.min.js (127.0.0.1) 75.90ms
+[I 180421 23:50:57 web:2106] 200 GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 (127.0.0.1) 18.21ms
+[I 180421 23:50:58 web:2106] 200 GET /static/plugins/bootstrap/css/bootstrap.min.css.map (127.0.0.1) 111.83ms
+[I 180421 23:50:59 web:2106] 200 GET /api/imagecode?pcodeid=&codeid=1042cc10-0a9f-4fca-abe9-a31c54ed0c4b (127.0.0.1) 349.46ms
+[I 180421 23:51:08 web:2106] 200 GET /api/imagecode?pcodeid=1042cc10-0a9f-4fca-abe9-a31c54ed0c4b&codeid=dc837f9c-bea4-44d2-b9e8-5e9e1800b638 (127.0.0.1) 30.59ms
+[I 180421 23:51:22 web:2106] 200 POST /api/smscode (127.0.0.1) 853.58ms
+[I 180421 23:52:24 web:2106] 200 POST /api/smscode (127.0.0.1) 428.62ms
+[I 180422 00:52:26 autoreload:196] /home/min/tonado_project/handlers/Passport.py modified; restarting server
+[I 180422 00:56:00 autoreload:196] /home/min/tonado_project/handlers/Passport.py modified; restarting server
+[I 180422 00:56:04 autoreload:196] /home/min/tonado_project/handlers/VerifyCode.py modified; restarting server
+[I 180422 01:08:05 autoreload:196] /home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/_mysql_exceptions.py modified; restarting server
+[I 180422 05:20:46 autoreload:196] /home/min/tonado_project/urls.py modified; restarting server
+[I 180422 05:21:38 web:2106] 304 GET /register.html (127.0.0.1) 144.21ms
+[I 180422 05:21:40 web:2106] 304 GET /register.html (127.0.0.1) 2.84ms
+[I 180422 05:21:41 web:2106] 304 GET /static/plugins/font-awesome/css/font-awesome.min.css (127.0.0.1) 140.52ms
+[I 180422 05:21:41 web:2106] 304 GET /static/css/ihome/main.css (127.0.0.1) 46.08ms
+[I 180422 05:21:42 web:2106] 304 GET /static/plugins/bootstrap/css/bootstrap.min.css (127.0.0.1) 257.49ms
+[I 180422 05:21:42 web:2106] 304 GET /static/css/reset.css (127.0.0.1) 23.76ms
+[I 180422 05:21:42 web:2106] 304 GET /static/css/ihome/register.css (127.0.0.1) 10.00ms
+[I 180422 05:21:42 web:2106] 304 GET /static/js/jquery.min.js (127.0.0.1) 60.52ms
+[I 180422 05:21:42 web:2106] 304 GET /static/plugins/bootstrap/js/bootstrap.min.js (127.0.0.1) 38.38ms
+[I 180422 05:21:42 web:2106] 304 GET /static/images/logo@128x59.png (127.0.0.1) 104.38ms
+[I 180422 05:21:42 web:2106] 200 GET /static/js/ihome/register.js (127.0.0.1) 6.37ms
+[I 180422 05:21:46 web:2106] 200 GET /api/imagecode?pcodeid=&codeid=7ed4b130-c473-4a29-8b85-e777bd06d6e1 (127.0.0.1) 1007.99ms
+[I 180422 05:21:51 web:2106] 304 GET /static/plugins/bootstrap/css/bootstrap.min.css.map (127.0.0.1) 23.86ms
+[I 180422 05:22:13 web:2106] 200 GET /api/imagecode?pcodeid=7ed4b130-c473-4a29-8b85-e777bd06d6e1&codeid=4b4c6c3e-e333-4323-9b41-31b949f6b434 (127.0.0.1) 48.17ms
+[I 180422 05:22:22 web:2106] 200 POST /api/smscode (127.0.0.1) 826.68ms
+[E 180422 05:22:42 web:1621] Uncaught exception POST /api/register (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/api/register', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/min/tonado_project/handlers/Passport.py", line 25, in post
+        return self.write(dict(errno=RET.PARAMERR,errmsg="参数不完整"))
+    NameError: global name 'RET' is not defined
+[E 180422 05:22:43 web:2106] 500 POST /api/register (127.0.0.1) 30.17ms
+[I 180422 05:24:57 autoreload:196] /home/min/tonado_project/handlers/Passport.py modified; restarting server
+[I 180422 05:25:25 web:2106] 200 POST /api/register (127.0.0.1) 4.49ms
+[I 180422 05:26:44 autoreload:196] /home/min/tonado_project/handlers/Passport.py modified; restarting server
+[I 180422 05:26:59 web:2106] 304 GET /register.html (127.0.0.1) 34.03ms
+[I 180422 05:26:59 web:2106] 304 GET /static/js/ihome/register.js (127.0.0.1) 1.20ms
+[I 180422 05:27:00 web:2106] 200 GET /api/imagecode?pcodeid=&codeid=c4469756-2fda-4fd5-baad-bd1b67e4201f (127.0.0.1) 223.18ms
+[I 180422 05:27:21 web:2106] 200 POST /api/smscode (127.0.0.1) 678.86ms
+[I 180422 05:28:59 web:2106] 200 POST /api/register (127.0.0.1) 1.01ms
+[I 180422 05:29:12 web:2106] 200 POST /api/register (127.0.0.1) 1.46ms
+[I 180422 05:34:47 web:2106] 200 POST /api/register (127.0.0.1) 28.97ms
+[I 180422 05:35:35 web:2106] 304 GET /register.html (127.0.0.1) 211.26ms
+[I 180422 05:35:36 web:2106] 304 GET /static/js/ihome/register.js (127.0.0.1) 120.14ms
+[I 180422 05:35:38 web:2106] 200 GET /api/imagecode?pcodeid=&codeid=32242eef-364d-418d-b15a-a2efd7d1c5c9 (127.0.0.1) 686.49ms
+[I 180422 05:35:48 web:2106] 200 GET /api/imagecode?pcodeid=32242eef-364d-418d-b15a-a2efd7d1c5c9&codeid=f869f4a6-2756-4f69-9dd7-f960e3ce8b04 (127.0.0.1) 32.96ms
+[I 180422 05:35:56 web:2106] 200 POST /api/smscode (127.0.0.1) 811.78ms
+[W 180422 05:36:13 web:1618] 403 POST /api/register (127.0.0.1): '_xsrf' argument missing from POST
+[W 180422 05:36:13 web:2106] 403 POST /api/register (127.0.0.1) 1.81ms
+[W 180422 05:36:29 web:1618] 403 POST /api/register (127.0.0.1): '_xsrf' argument missing from POST
+[W 180422 05:36:29 web:2106] 403 POST /api/register (127.0.0.1) 19.22ms
+[W 180422 05:36:44 web:1618] 403 POST /api/register (127.0.0.1): '_xsrf' argument missing from POST
+[W 180422 05:36:44 web:2106] 403 POST /api/register (127.0.0.1) 3.40ms
+[W 180422 05:36:47 web:1618] 403 POST /api/register (127.0.0.1): '_xsrf' argument missing from POST
+[W 180422 05:36:47 web:2106] 403 POST /api/register (127.0.0.1) 1.75ms
+[W 180422 05:37:21 web:1618] 403 POST /api/register (127.0.0.1): '_xsrf' argument missing from POST
+[W 180422 05:37:21 web:2106] 403 POST /api/register (127.0.0.1) 1.75ms
+[I 180422 05:38:33 autoreload:196] /home/min/tonado_project/config.py modified; restarting server
+[I 180422 05:38:56 web:2106] 304 GET /register.html (127.0.0.1) 122.12ms
+[I 180422 05:38:57 web:2106] 304 GET /static/js/ihome/register.js (127.0.0.1) 55.84ms
+[I 180422 05:38:58 web:2106] 200 GET /api/imagecode?pcodeid=&codeid=d1f7fd64-e0b6-44d7-9eb0-bcc9cb88d90f (127.0.0.1) 377.40ms
+[I 180422 05:39:12 web:2106] 200 POST /api/smscode (127.0.0.1) 608.45ms
+[E 180422 05:39:35 web:1621] Uncaught exception POST /api/register (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/api/register', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/min/tonado_project/handlers/Passport.py", line 29, in post
+        if not re.match(r'1\d{10}',mobile):
+    NameError: global name 're' is not defined
+[E 180422 05:39:35 web:2106] 500 POST /api/register (127.0.0.1) 72.52ms
+[I 180422 05:40:22 autoreload:196] /home/min/tonado_project/handlers/Passport.py modified; restarting server
+[E 180422 05:40:30 web:1621] Uncaught exception POST /api/register (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/api/register', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/min/tonado_project/handlers/Passport.py", line 39, in post
+        return self.write(dict(errno=RET.NODATA),errmsg="验证码已过期")
+    TypeError: write() got an unexpected keyword argument 'errmsg'
+[E 180422 05:40:30 web:2106] 500 POST /api/register (127.0.0.1) 54.37ms
+[I 180422 05:46:18 autoreload:196] /home/min/tonado_project/handlers/Passport.py modified; restarting server
+[I 180422 05:46:41 web:2106] 200 GET /api/imagecode?pcodeid=d1f7fd64-e0b6-44d7-9eb0-bcc9cb88d90f&codeid=136e2d6e-018e-4976-bed7-e4fe6aba5143 (127.0.0.1) 84.71ms
+[I 180422 05:46:49 web:2106] 200 GET /api/imagecode?pcodeid=136e2d6e-018e-4976-bed7-e4fe6aba5143&codeid=7dde7d55-2753-4bd6-8926-4d3017a1a11c (127.0.0.1) 32.20ms
+[I 180422 05:47:03 web:2106] 200 POST /api/smscode (127.0.0.1) 468.00ms
+[I 180422 05:47:25 web:2106] 200 POST /api/register (127.0.0.1) 1.34ms
+[I 180422 05:47:40 web:2106] 200 POST /api/register (127.0.0.1) 2.43ms
+[I 180422 05:49:30 web:2106] 200 GET /api/imagecode?pcodeid=7dde7d55-2753-4bd6-8926-4d3017a1a11c&codeid=ff392a39-2627-4914-bfba-920478098dd3 (127.0.0.1) 35.62ms
+[I 180422 05:49:31 web:2106] 200 GET /api/imagecode?pcodeid=ff392a39-2627-4914-bfba-920478098dd3&codeid=0abdabe1-1d73-4b41-a738-db8cff10a3d0 (127.0.0.1) 30.10ms
+[I 180422 05:49:39 web:2106] 200 POST /api/smscode (127.0.0.1) 450.29ms
+[I 180422 05:50:19 web:2106] 200 POST /api/register (127.0.0.1) 1.37ms
+[I 180422 05:58:54 autoreload:196] /home/min/tonado_project/constants.py modified; restarting server
+[I 180422 06:00:03 autoreload:196] /home/min/tonado_project/handlers/VerifyCode.py modified; restarting server
+[I 180422 06:00:27 web:2106] 304 GET /register.html (127.0.0.1) 29.38ms
+[I 180422 06:00:27 web:2106] 304 GET /static/js/ihome/register.js (127.0.0.1) 1.97ms
+[I 180422 06:00:28 web:2106] 200 GET /api/imagecode?pcodeid=&codeid=4d3d3668-b84d-4368-a285-e3ca764ce804 (127.0.0.1) 61.98ms
+[I 180422 06:00:42 web:2106] 200 POST /api/smscode (127.0.0.1) 564.51ms
+[I 180422 06:01:07 web:2106] 200 POST /api/register (127.0.0.1) 1247.39ms
+[E 180422 06:01:45 web:1621] Uncaught exception POST /api/register (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/api/register', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/min/tonado_project/handlers/Passport.py", line 53, in post
+        session_sql.commit()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 943, in commit
+        self.transaction.commit()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 467, in commit
+        self._prepare_impl()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 447, in _prepare_impl
+        self.session.flush()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2254, in flush
+        self._flush(objects)
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2380, in _flush
+        transaction.rollback(_capture_exception=True)
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/sqlalchemy/util/langhelpers.py", line 66, in __exit__
+        compat.reraise(exc_type, exc_value, exc_tb)
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2344, in _flush
+        flush_context.execute()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/sqlalchemy/orm/unitofwork.py", line 391, in execute
+        rec.execute(self)
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/sqlalchemy/orm/unitofwork.py", line 556, in execute
+        uow
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/sqlalchemy/orm/persistence.py", line 181, in save_obj
+        mapper, table, insert)
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/sqlalchemy/orm/persistence.py", line 866, in _emit_insert_statements
+        execute(statement, params)
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 948, in execute
+        return meth(self, multiparams, params)
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 269, in _execute_on_connection
+        return connection._execute_clauseelement(self, multiparams, params)
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1060, in _execute_clauseelement
+        compiled_sql, distilled_params
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1200, in _execute_context
+        context)
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1413, in _handle_dbapi_exception
+        exc_info
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+        reraise(type(exception), exception, tb=exc_tb, cause=cause)
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
+        context)
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 507, in do_execute
+        cursor.execute(statement, parameters)
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/MySQLdb/cursors.py", line 250, in execute
+        self.errorhandler(self, exc, value)
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 50, in defaulterrorhandler
+        raise errorvalue
+    IntegrityError: (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry 'u_15122302865' for key 'up_name'") [SQL: u'INSERT INTO ih_user_profile (up_name, up_mobile, up_passwd, up_real_name, up_id_card, up_admin, up_utime, up_ctime) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: (u'u_15122302865', u'15122302865', u'123456', None, None, 0, datetime.datetime(2018, 4, 22, 6, 0, 4, 59163), datetime.datetime(2018, 4, 22, 6, 0, 4, 59260))] (Background on this error at: http://sqlalche.me/e/gkpj)
+[E 180422 06:01:46 web:2106] 500 POST /api/register (127.0.0.1) 324.18ms
+[I 180422 06:09:02 web:2106] 304 GET /register.html (127.0.0.1) 12.87ms
+[I 180422 06:09:02 web:2106] 304 GET /static/js/ihome/register.js (127.0.0.1) 1.15ms
+[I 180422 06:09:03 web:2106] 200 GET /api/imagecode?pcodeid=&codeid=d1c27381-1930-4111-998b-ccc14060f759 (127.0.0.1) 31.84ms
+[E 180422 06:09:23 web:1621] Uncaught exception POST /api/smscode (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/api/smscode', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/min/tonado_project/handlers/VerifyCode.py", line 54, in post
+        return self.write(dict(errno=RET.PARAMERR),errmsg="手机号不正确")
+    TypeError: write() got an unexpected keyword argument 'errmsg'
+[E 180422 06:09:23 web:2106] 500 POST /api/smscode (127.0.0.1) 6.39ms
+[I 180422 06:09:40 web:2106] 200 GET /api/imagecode?pcodeid=d1c27381-1930-4111-998b-ccc14060f759&codeid=fe683174-cbab-446f-b603-8549ee705d2b (127.0.0.1) 25.43ms
+[I 180422 06:11:27 autoreload:196] /home/min/tonado_project/handlers/VerifyCode.py modified; restarting server
+[I 180422 06:11:39 web:2106] 304 GET /register.html (127.0.0.1) 15.92ms
+[I 180422 06:11:40 web:2106] 200 GET /api/imagecode?pcodeid=&codeid=f86c9148-9d46-451f-9936-625ffc354105 (127.0.0.1) 78.27ms
+[I 180422 06:11:52 web:2106] 200 POST /api/smscode (127.0.0.1) 487.54ms
+[I 180422 06:12:12 web:2106] 200 POST /api/register (127.0.0.1) 1.36ms
+[I 180422 06:12:29 web:2106] 200 POST /api/register (127.0.0.1) 3.46ms
+[I 180422 06:13:05 web:2106] 200 POST /api/register (127.0.0.1) 406.45ms
+[I 180422 06:18:47 autoreload:196] /home/min/tonado_project/handlers/Passport.py modified; restarting server
+[I 180422 06:19:05 web:2106] 304 GET /register.html (127.0.0.1) 30.72ms
+[I 180422 06:19:05 web:2106] 304 GET /static/js/ihome/register.js (127.0.0.1) 1.40ms
+[I 180422 06:19:06 web:2106] 200 GET /api/imagecode?pcodeid=&codeid=7c3ef0a5-6c27-4587-9b90-5d7760dd2d6c (127.0.0.1) 61.57ms
+[I 180422 06:19:17 web:2106] 200 GET /api/imagecode?pcodeid=7c3ef0a5-6c27-4587-9b90-5d7760dd2d6c&codeid=2af568b9-372e-4694-8956-f1d941f24be0 (127.0.0.1) 29.13ms
+[I 180422 06:19:26 web:2106] 200 POST /api/smscode (127.0.0.1) 562.27ms
+[I 180422 06:19:42 web:2106] 200 POST /api/register (127.0.0.1) 1.78ms
+[I 180422 06:21:58 autoreload:196] /home/min/tonado_project/handlers/Passport.py modified; restarting server
+[I 180422 06:23:01 autoreload:196] /home/min/tonado_project/handlers/Passport.py modified; restarting server
+[I 180422 06:23:52 web:2106] 304 GET /register.html (127.0.0.1) 929.69ms
+[I 180422 06:24:54 web:2106] 200 GET /api/imagecode?pcodeid=&codeid=6ee3d7fb-5ade-4e14-8d51-d268779185d5 (127.0.0.1) 3762.69ms
+[I 180422 06:34:44 web:2106] 304 GET /static/js/ihome/register.js (127.0.0.1) 162.38ms
+[I 180422 06:34:46 web:2106] 200 GET /api/imagecode?pcodeid=&codeid=d659cf50-17b4-450f-b117-a797eba25c3b (127.0.0.1) 499.65ms
+[I 180422 06:35:08 web:2106] 200 GET /api/imagecode?pcodeid=d659cf50-17b4-450f-b117-a797eba25c3b&codeid=e9739570-7d12-40c7-9971-2c91a0b66540 (127.0.0.1) 45.92ms
+[I 180422 06:35:16 web:2106] 200 POST /api/smscode (127.0.0.1) 1295.78ms
+[I 180422 06:35:38 web:2106] 200 POST /api/register (127.0.0.1) 3122.68ms
+[I 180422 06:36:15 web:2106] 200 POST /api/register (127.0.0.1) 59.72ms
+[I 180422 06:37:37 autoreload:196] /home/min/tonado_project/handlers/Passport.py modified; restarting server
+[I 180422 06:38:02 autoreload:196] /home/min/tonado_project/handlers/Passport.py modified; restarting server

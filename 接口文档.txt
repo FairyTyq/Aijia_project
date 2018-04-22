@@ -37,5 +37,38 @@ image_code_text string
 }
 
 
+3.注册
+URL: /api/register
+method:POST
+传入参数：json
+名称			类型			说明				是否必须
+mobile		string		手机号		  		是
+phoneCode	string		手机收到的验证码  	是
+passwd		string		密码		  			是
+passwd2		string		重复密码	  			是
+
+
+返回值
+{
+	"errno":0
+	"errmsg":"OK"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
