@@ -8,7 +8,6 @@ import config
 class Session(object):
     """ """
     def __init__(self,request_handler):
-        data = ""
         self.request_handler = request_handler
         self.session_id = self.request_handler.get_secure_cookie("session_id")
         if not self.session_id:
@@ -16,6 +15,7 @@ class Session(object):
             # 生成一个session_id,全局唯一
             self.session_id = uuid.uuid4().get_hex()
             self.data = {}
+            self.request_handler.set_secure_cookie("session_id:%s"%self.session_id)
         else:
             # 拿到session_id，去redis总获取数据
             try:
@@ -35,8 +35,6 @@ class Session(object):
         except Exception as e:
             logging.error(e)
             raise Exception("save session failed")
-        else:
-            self.request_handler.set_secure_cookie("session_id",self.session_id)
     
     def clear(self):
         self.request_handler.clear_cookie("session_id",)

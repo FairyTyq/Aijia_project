@@ -56,21 +56,21 @@ class RegisterHandler(BaseHandler):
 
 class LoginHandler(BaseHandler):
     def post(self):
-        print self.json_args
         mobile = self.json_args.get("mobile")
-        passwd = self.json_args.get("passwd")
-        session_id = self.json_args.get("session_id")
+        passwd = self.json_args.get("password")
+        session_id = self.get_secure_cookie("session_id")
         
         Session_sql = sessionmaker(bind=engine)
         session_sql = Session_sql()
         real_passwd = session_sql.query(UserProfile.up_passwd).filter(UserProfile.up_mobile==mobile).first()[0]
-        print real_passwd
         session_sql.close()
         print "登录状态:%s"%(passwd == real_passwd)
-        print self.get_current_user()
-        if not self.get_current_user():
+        if not self.get_current_user() and (passwd==real_passwd):
+            self.session.data = {
+                    "mobile":mobile,
+                    "passwd":passwd
+                    }
             self.session.save()
-        print self.json_args
 
 
 
