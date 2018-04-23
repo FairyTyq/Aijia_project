@@ -14,6 +14,7 @@ $(document).ready(function() {
         e.preventDefault();
         mobile = $("#mobile").val();
         passwd = $("#password").val();
+        session_id = getCookie(session_id)
         if (!mobile) {
             $("#mobile-err span").html("请填写正确的手机号！");
             $("#mobile-err").show();

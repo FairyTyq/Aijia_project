@@ -57,8 +57,14 @@ passwd2		string		重复密码	  			是
 
 
 
-
-
+4.登录
+URL: /api/login
+method:POST
+传入参数:json
+名称				类型				说明				是否必须
+mobile			string			手机号			是
+passwd			string			密码				是
+session_id		string			session_id		是
 
 
 
