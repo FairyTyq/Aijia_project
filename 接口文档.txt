@@ -66,12 +66,29 @@ mobile			string			手机号			是
 passwd			string			密码				是
 session_id		string			session_id		是
 
+返回参数：
+{
+	"errno":0,
+	"errmsg":"OK"
+}
+
+
+5.登录状态检查
+URL: /api/check_login
+method:
+传入参数:
+名称			类型			说明				是否必须
 
 
 
 
 
+返回参数:
 
+{
+	"errno":0,
+	"errmsg":OK	
+}
 
 
 
