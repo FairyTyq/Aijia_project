@@ -74,8 +74,10 @@ class LoginHandler(BaseHandler):
         session_sql = Session_sql()
         real_passwd = session_sql.query(UserProfile.up_passwd).filter(UserProfile.up_mobile==mobile).first()[0]
         session_sql.close()
-        print "登录状态:%s"%(passwd == real_passwd)
-        if not self.get_current_user() and (passwd==real_passwd):
+        
+        if passwd==real_passwd:
+            print "登录状态:%s"%(passwd == real_passwd)
+            self.get_current_user()
             self.session.data = {
                     "mobile":mobile,
                     "name":"u_%s"%mobile
@@ -84,7 +86,7 @@ class LoginHandler(BaseHandler):
                 self.session.save()
             except Exception as e:
                 logging.error(e)
-            self.write(dict(errno=RET.OK,errmsg="OK"))
+            return self.write(dict(errno=RET.OK,errmsg="OK"))
         else:
             return self.write({"errno":2,"errmsg":"手机号或密码错误！"})
 

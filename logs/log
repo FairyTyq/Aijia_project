@@ -734,3 +734,140 @@
 [I 180423 07:01:09 autoreload:196] /home/min/tonado_project/handlers/Passport.py modified; restarting server
 [I 180423 07:02:05 autoreload:196] /home/min/tonado_project/handlers/Passport.py modified; restarting server
 [I 180423 07:02:07 autoreload:196] /home/min/tonado_project/utils/session.py modified; restarting server
+[I 180428 19:41:42 autoreload:196] /home/min/tonado_project/handlers/Passport.py modified; restarting server
+[I 180428 19:42:39 autoreload:196] /home/min/tonado_project/handlers/Passport.py modified; restarting server
+[I 180428 19:42:55 web:2106] 304 GET /login.html (127.0.0.1) 53.88ms
+[I 180428 19:43:07 web:2106] 200 POST /api/login (127.0.0.1) 496.95ms
+[I 180428 19:44:57 autoreload:196] /home/min/tonado_project/handlers/Passport.py modified; restarting server
+[E 180428 19:45:00 web:1621] Uncaught exception POST /api/login (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/api/login', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/min/tonado_project/handlers/Passport.py", line 81, in post
+        "name":"u_%s"%mobile
+    AttributeError: 'LoginHandler' object has no attribute 'session'
+[E 180428 19:45:00 web:2106] 500 POST /api/login (127.0.0.1) 185.13ms
+[E 180428 19:45:07 web:1621] Uncaught exception POST /api/login (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/api/login', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/min/tonado_project/handlers/Passport.py", line 81, in post
+        "name":"u_%s"%mobile
+    AttributeError: 'LoginHandler' object has no attribute 'session'
+[E 180428 19:45:07 web:2106] 500 POST /api/login (127.0.0.1) 10.46ms
+[E 180428 19:45:11 web:1621] Uncaught exception POST /api/login (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/api/login', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/min/tonado_project/handlers/Passport.py", line 81, in post
+        "name":"u_%s"%mobile
+    AttributeError: 'LoginHandler' object has no attribute 'session'
+[E 180428 19:45:11 web:2106] 500 POST /api/login (127.0.0.1) 8.41ms
+[E 180428 19:45:13 web:1621] Uncaught exception POST /api/login (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/api/login', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/min/tonado_project/handlers/Passport.py", line 81, in post
+        "name":"u_%s"%mobile
+    AttributeError: 'LoginHandler' object has no attribute 'session'
+[E 180428 19:45:13 web:2106] 500 POST /api/login (127.0.0.1) 10.39ms
+[I 180428 19:45:35 web:2106] 304 GET /login.html (127.0.0.1) 15.29ms
+[E 180428 19:45:44 web:1621] Uncaught exception POST /api/login (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/api/login', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/min/tonado_project/handlers/Passport.py", line 81, in post
+        "name":"u_%s"%mobile
+    AttributeError: 'LoginHandler' object has no attribute 'session'
+[E 180428 19:45:44 web:2106] 500 POST /api/login (127.0.0.1) 80.74ms
+[I 180428 19:48:44 autoreload:196] /home/min/tonado_project/handlers/Passport.py modified; restarting server
+[I 180428 19:48:51 web:2106] 304 GET /login.html (127.0.0.1) 15.60ms
+[E 180428 19:48:59 web:1621] Uncaught exception POST /api/login (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/api/login', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/min/tonado_project/handlers/Passport.py", line 81, in post
+        "name":"u_%s"%mobile
+    AttributeError: 'LoginHandler' object has no attribute 'session'
+[E 180428 19:48:59 web:2106] 500 POST /api/login (127.0.0.1) 201.10ms
+[I 180428 19:53:37 web:2106] 200 GET /register.html (127.0.0.1) 44.63ms
+[I 180428 19:53:37 web:2106] 200 GET /static/css/ihome/register.css (127.0.0.1) 52.21ms
+[I 180428 19:53:37 web:2106] 200 GET /static/js/ihome/register.js (127.0.0.1) 40.58ms
+[I 180428 19:53:38 web:2106] 200 GET /api/imagecode?pcodeid=&codeid=ae1e8a5e-1caa-4594-99fd-22debebbfcaa (127.0.0.1) 466.31ms
+[I 180428 19:55:09 web:2106] 200 POST /api/smscode (127.0.0.1) 964.45ms
+[E 180428 19:55:32 Passport:64] global name 'Session' is not defined
+[I 180428 19:55:32 web:2106] 200 POST /api/register (127.0.0.1) 148.48ms
+[I 180428 19:55:33 web:2106] 200 GET / (127.0.0.1) 35.37ms
+[I 180428 19:55:33 web:2106] 200 GET /static/plugins/swiper/css/swiper.min.css (127.0.0.1) 118.41ms
+[I 180428 19:55:33 web:2106] 200 GET /static/css/ihome/index.css (127.0.0.1) 68.28ms
+[I 180428 19:55:33 web:2106] 200 GET /static/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css (127.0.0.1) 46.82ms
+[I 180428 19:55:33 web:2106] 200 GET /static/plugins/swiper/js/swiper.jquery.min.js (127.0.0.1) 6.63ms
+[I 180428 19:55:33 web:2106] 200 GET /static/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js (127.0.0.1) 3.01ms
+[I 180428 19:55:33 web:2106] 200 GET /static/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js (127.0.0.1) 2.55ms
+[I 180428 19:55:33 web:2106] 200 GET /static/js/template.js (127.0.0.1) 47.41ms
+[I 180428 19:55:33 web:2106] 200 GET /static/js/ihome/index.js (127.0.0.1) 8.69ms
+[W 180428 19:55:34 web:2106] 404 GET /api/check_login (127.0.0.1) 25.26ms
+[W 180428 19:55:34 web:2106] 404 GET /api/house/index (127.0.0.1) 1.59ms
+[W 180428 19:55:35 web:2106] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (127.0.0.1) 3.56ms
+[I 180428 19:56:28 web:2106] 200 GET /api/imagecode?pcodeid=&codeid=043d5900-fab4-4bc7-a5d9-bb861db2dd42 (127.0.0.1) 32.33ms
+[I 180428 19:59:05 autoreload:196] /home/min/tonado_project/handlers/Passport.py modified; restarting server
+[I 180428 19:59:13 web:2106] 200 POST /api/login (127.0.0.1) 157.02ms
+[I 180428 19:59:26 web:2106] 200 POST /api/login (127.0.0.1) 11.34ms
+[I 180428 20:01:57 autoreload:196] /home/min/tonado_project/handlers/Passport.py modified; restarting server
+[I 180428 20:02:05 web:2106] 200 POST /api/login (127.0.0.1) 158.52ms
+[I 180428 20:02:07 web:2106] 200 POST /api/login (127.0.0.1) 8.38ms
+[I 180428 20:02:09 web:2106] 304 GET /login.html (127.0.0.1) 40.85ms
+[I 180428 20:02:19 web:2106] 200 POST /api/login (127.0.0.1) 10.59ms
+[I 180428 20:02:21 web:2106] 200 POST /api/login (127.0.0.1) 10.96ms
+[I 180428 20:04:42 web:2106] 200 GET /login.html (127.0.0.1) 34.89ms
+[I 180428 20:04:42 web:2106] 200 GET /static/css/reset.css (127.0.0.1) 301.58ms
+[I 180428 20:04:42 web:2106] 200 GET /static/css/ihome/main.css (127.0.0.1) 223.06ms
+[I 180428 20:04:42 web:2106] 200 GET /static/css/ihome/login.css (127.0.0.1) 163.43ms
+[I 180428 20:04:42 web:2106] 200 GET /static/plugins/bootstrap/css/bootstrap.min.css (127.0.0.1) 385.71ms
+[I 180428 20:04:42 web:2106] 200 GET /static/plugins/font-awesome/css/font-awesome.min.css (127.0.0.1) 93.76ms
+[I 180428 20:04:42 web:2106] 200 GET /static/js/jquery.min.js (127.0.0.1) 152.80ms
+[I 180428 20:04:42 web:2106] 200 GET /static/plugins/bootstrap/js/bootstrap.min.js (127.0.0.1) 72.37ms
+[I 180428 20:04:42 web:2106] 200 GET /static/images/logo@128x59.png (127.0.0.1) 21.51ms
+[I 180428 20:04:42 web:2106] 200 GET /static/js/ihome/login.js (127.0.0.1) 5.01ms
+[I 180428 20:04:43 web:2106] 200 GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 (127.0.0.1) 4.53ms
+[I 180428 20:04:43 web:2106] 200 GET /static/plugins/bootstrap/css/bootstrap.min.css.map (127.0.0.1) 30.77ms
+[I 180428 20:05:05 web:2106] 200 POST /api/login (127.0.0.1) 676.21ms
+[I 180428 20:05:05 web:2106] 200 GET / (127.0.0.1) 29.26ms
+[I 180428 20:05:05 web:2106] 200 GET /static/plugins/bootstrap/css/bootstrap.min.css (127.0.0.1) 1.95ms
+[I 180428 20:05:05 web:2106] 200 GET /static/plugins/font-awesome/css/font-awesome.min.css (127.0.0.1) 1.63ms
+[I 180428 20:05:05 web:2106] 200 GET /static/css/reset.css (127.0.0.1) 1.33ms
+[I 180428 20:05:05 web:2106] 200 GET /static/plugins/swiper/css/swiper.min.css (127.0.0.1) 100.53ms
+[I 180428 20:05:05 web:2106] 200 GET /static/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css (127.0.0.1) 34.37ms
+[I 180428 20:05:05 web:2106] 200 GET /static/css/ihome/main.css (127.0.0.1) 26.21ms
+[I 180428 20:05:05 web:2106] 200 GET /static/css/ihome/index.css (127.0.0.1) 29.53ms
+[I 180428 20:05:05 web:2106] 200 GET /static/js/jquery.min.js (127.0.0.1) 15.11ms
+[I 180428 20:05:05 web:2106] 200 GET /static/plugins/bootstrap/js/bootstrap.min.js (127.0.0.1) 1.87ms
+[I 180428 20:05:05 web:2106] 200 GET /static/plugins/swiper/js/swiper.jquery.min.js (127.0.0.1) 32.32ms
+[I 180428 20:05:05 web:2106] 200 GET /static/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js (127.0.0.1) 28.02ms
+[I 180428 20:05:05 web:2106] 200 GET /static/js/template.js (127.0.0.1) 20.17ms
+[I 180428 20:05:05 web:2106] 200 GET /static/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js (127.0.0.1) 5.23ms
+[I 180428 20:05:06 web:2106] 200 GET /static/js/ihome/index.js (127.0.0.1) 104.09ms
+[I 180428 20:05:06 web:2106] 200 GET /static/images/logo@128x59.png (127.0.0.1) 6.50ms
+[I 180428 20:05:06 web:2106] 200 GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 (127.0.0.1) 9.26ms
+[I 180428 20:05:06 web:2106] 200 GET /static/plugins/bootstrap/css/bootstrap.min.css.map (127.0.0.1) 10.71ms
+[W 180428 20:05:06 web:2106] 404 GET /api/check_login (127.0.0.1) 100.91ms
+[W 180428 20:05:06 web:2106] 404 GET /api/house/index (127.0.0.1) 1.24ms
+[W 180428 20:05:07 web:2106] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (127.0.0.1) 1.26ms
+[I 180428 20:05:42 autoreload:196] /home/min/tonado_project/handlers/Passport.py modified; restarting server
+[I 180428 20:05:48 web:2106] 200 GET /login.html (127.0.0.1) 50.01ms
+[I 180428 20:05:48 web:2106] 200 GET /static/css/ihome/login.css (127.0.0.1) 2.46ms
+[I 180428 20:05:48 web:2106] 200 GET /static/js/ihome/login.js (127.0.0.1) 1.51ms
+[I 180428 20:05:56 web:2106] 200 POST /api/login (127.0.0.1) 622.50ms
+[W 180428 20:05:57 web:2106] 404 GET /api/check_login (127.0.0.1) 109.82ms
+[W 180428 20:05:57 web:2106] 404 GET /api/house/index (127.0.0.1) 2.60ms
+[W 180428 20:05:59 web:2106] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (127.0.0.1) 1.18ms
+[I 180428 20:08:07 web:2106] 200 POST /api/login (127.0.0.1) 11.97ms
+[I 180428 20:08:11 web:2106] 200 POST /api/login (127.0.0.1) 6.56ms
+[I 180428 20:08:47 autoreload:196] /home/min/tonado_project/handlers/Passport.py modified; restarting server
+[I 180428 20:10:24 autoreload:196] /home/min/tonado_project/handlers/Passport.py modified; restarting server
