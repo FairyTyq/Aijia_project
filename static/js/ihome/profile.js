@@ -24,7 +24,7 @@ $(document).ready(function () {
         }
     })
     $("#form-avatar").submit(function (e) {
-        // 组织浏览器对于表单的默认行为
+        // 阻止浏览器对于表单的默认行为
         e.preventDefault();
         $('.image_uploading').fadeIn('fast');
         var options = {

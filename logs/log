@@ -871,3 +871,11 @@
 [I 180428 20:08:11 web:2106] 200 POST /api/login (127.0.0.1) 6.56ms
 [I 180428 20:08:47 autoreload:196] /home/min/tonado_project/handlers/Passport.py modified; restarting server
 [I 180428 20:10:24 autoreload:196] /home/min/tonado_project/handlers/Passport.py modified; restarting server
+[I 180428 23:46:50 web:2106] 200 POST /api/login (127.0.0.1) 549.31ms
+[I 180428 23:46:56 web:2106] 200 POST /api/login (127.0.0.1) 66.41ms
+[W 180428 23:46:58 web:2106] 404 GET /api/check_login (127.0.0.1) 74.28ms
+[W 180428 23:46:58 web:2106] 404 GET /api/house/index (127.0.0.1) 1.44ms
+[I 180428 23:46:58 web:2106] 200 GET /favicon.ico (127.0.0.1) 139.09ms
+[W 180428 23:46:59 web:2106] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (127.0.0.1) 17.00ms
+[I 180429 00:05:36 autoreload:196] /home/min/tonado_project/config.py modified; restarting server
+[I 180429 05:58:52 autoreload:196] /home/min/tonado_project/models.py modified; restarting server

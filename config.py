@@ -33,3 +33,7 @@ log_level = "debug"
 # session数据有效期  单位：秒
 session_expires = 86400
 
+# 七牛域名
+image_url_prefix = 'http://p7xbqsr2x.bkt.clouddn.com/'
+
+
