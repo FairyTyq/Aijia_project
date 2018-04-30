@@ -91,6 +91,67 @@ method:
 }
 
 
+6.拉取个人信息
+URL:/api/profile
+Method:GET
+传入参数：无
+
+返回参数
+{
+	'errno':0,
+	'errmg''OK',
+	'data':{'name':'','avatar':''}
+}
+
+
+7.上传头像
+URL:/api/profile/avatar
+Method:POST
+传入参数：json
+名称			类型			说明			是否必须
+image_data	二进制文件	头像	图片		是
+
+返回参数
+{
+	'errno':0,
+	'errmsg':'OK',
+	'url':'img_url'
+}
+
+8.更改用户名
+URL:/api/profile/name
+Method:POST
+传入参数：json
+名称			类型			说明			是否必须
+name		string		用户昵称		是
+
+
+返回参数：
+{
+	'errno':0,
+	'erromsg':'OK',	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

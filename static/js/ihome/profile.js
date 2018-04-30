@@ -13,10 +13,10 @@ function getCookie(name) {
 
 $(document).ready(function () {
     $.get("/api/profile", function(data){
-        if ("4101" == data.errcode) {
+        if ("4101" == data.errno) {
             location.href = "/login.html";
         }
-        else if ("0" == data.errcode) {
+        else if ("0" == data.errno) {
             $("#user-name").val(data.data.name);
             if (data.data.avatar) {
                 $("#user-avatar").attr("src", data.data.avatar);
@@ -35,10 +35,10 @@ $(document).ready(function () {
                 "X-XSRFTOKEN": getCookie("_xsrf")
             },
             success: function (data) {
-                if ("0" == data.errcode) {
+                if ("0" == data.errno) {
                     $('.image_uploading').fadeOut('fast');
-                    $("#user-avatar").attr("src", data.data)
-                } else if ("4101" == data.errcode) {
+                    $("#user-avatar").attr("src", data.url)
+                } else if ("4101" == data.errno) {
                     location.href = "/login.html";
                 }
             }

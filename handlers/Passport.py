@@ -4,8 +4,7 @@ import logging
 import re
 
 from .BaseHandler import BaseHandler
-from models import UserProfile,engine
-from sqlalchemy.orm import sessionmaker
+from models import UserProfile
 from utils.response_code import RET
 
 class IndexHandler(BaseHandler):
@@ -44,17 +43,14 @@ class RegisterHandler(BaseHandler):
             return self.write(dict(errno=RET.DATAERR,errmsg="密码不一致"))
         # 验证成功，则将手机号与密码存入mysql数据库
 
-        Session_sql = sessionmaker(bind=engine)
-        session_sql = Session_sql()
         usr_tmp = UserProfile(up_name = "u_%s"%mobile,up_mobile = mobile,up_passwd = passwd)
         try:
-            session_sql.add(usr_tmp)
+            self.session_sql.add(usr_tmp)
             print "----------test-------------------------"
-            session_sql.commit()
+            self.session_sql.commit()
         except Exception as e:
             logging.error(e)
             return self.write(dict(errno=RET.DATAERR,errmsg="手机号已注册"))
-        session_sql.close()
         try:
             self.session = Session(self)
             self.session.data['name'] = "u_%s"%mobile
@@ -70,10 +66,7 @@ class LoginHandler(BaseHandler):
         passwd = self.json_args.get("password")
         session_id = self.get_secure_cookie("session_id")
         
-        Session_sql = sessionmaker(bind=engine)
-        session_sql = Session_sql()
-        real_passwd = session_sql.query(UserProfile.up_passwd).filter(UserProfile.up_mobile==mobile).first()[0]
-        session_sql.close()
+        real_passwd = self.session_sql.query(UserProfile.up_passwd).filter(UserProfile.up_mobile==mobile).first()[0]
         
         if passwd==real_passwd:
             print "登录状态:%s"%(passwd == real_passwd)

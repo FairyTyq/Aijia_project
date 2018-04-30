@@ -9,7 +9,7 @@ def require_logined(fun):
     @functools.wraps(fun)
     def wrapper(request_handler_obj,*args,**kwargs):
         # 根据get_current_user方法进行判断，如果返回的不是一个空字典，证明用户已经登陆过，该用户的session数据已经保存
-        if not request_handler_obj.get_current_user():
+        if request_handler_obj.get_current_user():
             fun(request_handler_obj,*args,**kwargs)
         # 返回的是空字典，代表用户未登录过，没有保存用户的session数据
         else:

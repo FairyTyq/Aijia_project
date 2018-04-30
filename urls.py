@@ -2,11 +2,13 @@
 
 import os
 
-from handlers import Passport,VerifyCode
+from handlers import Passport,VerifyCode,Profile
 # 提取静态文件的Handler
 from handlers.BaseHandler import StaticFileHandler
 
 handlers = [
+        (r'/api/profile',Profile.ProfileHandler),
+        (r'/api/profile/avatar',Profile.AvatarHandler),
         (r'/api/login',Passport.LoginHandler),
         (r'/api/register',Passport.RegisterHandler),
         (r'/api/imagecode',VerifyCode.ImageCodeHandler),

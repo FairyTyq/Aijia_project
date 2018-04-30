@@ -25,6 +25,7 @@ class UserProfile(Base):
     up_passwd = Column(VARCHAR(64),nullable=False,comment="密码")
     up_real_name = Column(VARCHAR(32),nullable=True,comment="真实姓名")
     up_id_card = Column(VARCHAR(20),nullable=True,comment="身份证号")
+    up_avatar = Column(VARCHAR(128),nullable=True,comment='用户头像')
     up_admin = Column(Boolean,nullable=False,default=False,comment="是否为管理员")
     up_utime = Column(DateTime,nullable=False,default=datetime.now(),comment="最后更新时间")
     up_ctime = Column(DateTime,nullable=False,default=datetime.now(),comment="创建时间")
