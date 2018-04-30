@@ -14,22 +14,19 @@ class ProfileHandler(BaseHandler):
     ''' '''
     @require_logined
     def get(self):
+        # 根据session中的手机号在mysql中读取用户数据
         try:
-            name = self.session_sql.query(UserProfile.up_name).filter(UserProfile.up_mobile==self.session.data['mobile']).first()[0] 
+            usr = self.session_sql.query(UserProfile).filter(UserProfile.up_mobile==self.session.data['mobile']).first()
         except Exception as e:
             logging(e)
-        if name == None:
-            name = 'erroname'
+            return self.write({'errno':RET.DBERR,'errmsg':'db error'})
+
+        name = usr.up_name
+        mobile = usr.up_mobile
+        img_name = usr.up_avatar
         
-        try:
-            img_name = self.session_sql.query(UserProfile.up_avatar).filter(UserProfile.up_mobile==self.session.data['mobile']).first()[0]
-        except Exception as e:
-            logging(e)
-        if img_name == None:
-            img_name = ''
-            
         avatar = image_url_prefix+img_name
-        return self.write(dict(errno=RET.OK,errmsg='OK',data={'name':name,'avatar':avatar}))
+        self.write(dict(errno=RET.OK,errmsg='OK',data={'name':name,'avatar':avatar,'mobile':mobile}))
 
             
 
@@ -37,29 +34,69 @@ class AvatarHandler(BaseHandler):
     '''上传头像 '''
     @require_logined
     def post(self):
+        # 读取图片文件数据
         try:
             image_data= self.request.files['avatar'][0]['body']
         except Exception as e:
             # 参数出错
             logging.error(e)
             return self.write(dict(errno=RET.PARAMERR,essmsg='参数错误'))
+        # 将图片存储到七牛
         try:
             image_name = storage(image_data)
         except Exception as e:
             logging.error(e)
             image_name = None
+        # storage函数会返回七牛存储器中自动生成的文件名,若为空则存储出错
         if not image_name:
             return self.write({'errno':RET.THIRDERR,'errmsg':'qiniu error'})
         try:
-            # 存入数据库
+            # 将头像文件名存入mysql数据库
             usr = self.session_sql.query(UserProfile).filter(UserProfile.up_mobile==self.session.data['mobile']).first()
-            print 'test print mobile:%s'%usr.up_mobile
             usr.up_avatar = image_name
             self.session_sql.commit()
         except Exception as e:
             logging.error(e)
-            return self.write({'errono':RET.DBERR,'errmsg':'upload failed'})
-        
+            return self.write({'errno':RET.DBERR,'errmsg':'upload failed'}) 
+        # 加上外链域名组合成完整url
         img_url = image_url_prefix+image_name
+        # 返回数据给ajax
         return self.write({'errno':RET.OK,'errmsg':'OK','url':img_url})
+
+
+class NicknameHandler(BaseHandler):
+    '''修改昵称'''
+    @require_logined
+    def post(self):
+        # 从解析过的json数据中获取用户提交的新昵称
+        nick_name = self.json_args.get('name')
+        print(nick_name)
+        # 根据session中的手机号获取用户信息，并更新昵称
+        try:
+            usr = self.session_sql.query(UserProfile).filter(UserProfile.up_mobile==self.session.data['mobile']).first()
+            usr.up_name = nick_name
+            self.session_sql.commit()
+        except Exception as e:
+            logging.error(e)
+            return self.write({'errno':RET.DBERR,'errmsg':'upload failed'})
+        # 更新成功，返回OK
+        return self.write({'errno':RET.OK,'errmsg':'OK'})
+
+
+class LogoutHandler(BaseHandler):
+    '''登出'''
+    @require_logined
+    def get(self):
+        try:
+            self.session.clear()
+        except Exception as e:
+            logging.error(e)
+        return self.write({'errno':RET.OK,'errmsg':'OK'})
+
+
+
+
+
+
+
 

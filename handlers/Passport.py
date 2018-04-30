@@ -71,9 +71,10 @@ class LoginHandler(BaseHandler):
         if passwd==real_passwd:
             print "登录状态:%s"%(passwd == real_passwd)
             self.get_current_user()
+            usr = self.session_sql.query(UserProfile).filter(UserProfile.up_mobile==mobile).first()
             self.session.data = {
                     "mobile":mobile,
-                    "name":"u_%s"%mobile
+                    "name":usr.up_name
                     }
             try:
                 self.session.save()
@@ -83,11 +84,12 @@ class LoginHandler(BaseHandler):
         else:
             return self.write({"errno":2,"errmsg":"手机号或密码错误！"})
 
+
 class CheckLoginHandler(BaseHandler):
     """检查登录状态"""
     def get(self):
         if self.get_current_user():
-            self.write({"errno":0,"errmsg":"True","data":{"name":self.session.data.get("name")}})
+            self.write({"errno":RET.OK,"errmsg":"True","data":{"name":self.session.data.get("name")}})
         else:
             self.write({"errno":1,"errmsg":"false"})
 

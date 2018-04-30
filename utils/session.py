@@ -15,7 +15,7 @@ class Session(object):
             # 生成一个session_id,全局唯一
             self.session_id = uuid.uuid4().get_hex()
             self.data = {}
-            self.request_handler.set_secure_cookie("session_id:%s"%self.session_id)
+            self.request_handler.set_secure_cookie("session_id",self.session_id)
         else:
             # 拿到session_id，去redis总获取数据
             try:
