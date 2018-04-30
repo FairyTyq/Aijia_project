@@ -94,7 +94,39 @@ class LogoutHandler(BaseHandler):
         return self.write({'errno':RET.OK,'errmsg':'OK'})
 
 
+class AuthHandler(BaseHandler):
+    '''实名认证'''
+    @require_logined
+    def get(self):
+        try:
+            usr = self.session_sql.query(UserProfile).filter(UserProfile.up_mobile==self.session.data.get('mobile')).first() 
+        except Exception as e:
+            logging.error(e)
+            return self.write({'errno':RET.DBERR,'errmsg':'dberr'})
+        real_name = usr.up_real_name
+        id_card = usr.up_id_card
+        print '读取的身份信息————%s,%s'%(real_name,id_card)
+        return self.write({'errno':RET.OK,'errmsg':'OK','data':{'real_name':real_name,'id_card':id_card}})
+    
+    @require_logined
+    def post(self):
+        real_name = self.json_args.get('real_name')
+        id_card = self.json_args.get('id_card')
+        
+        try:
+            usr = self.session_sql.query(UserProfile).filter(UserProfile.up_mobile==self.session.data.get('mobile')).first()
+        except Exception as e:
+            logging.error(e)
+            return self.write({'errno':RET.DBERR,'errmsg':'dberr'})
 
+        try:
+            usr.up_real_name = real_name
+            usr.up_id_card = id_card
+            self.session_sql.commit()
+        except Exception as e:
+            logging.error(e)
+            return self.write({'errno':RET.DBERR,'errmsg':'upload error'})
+        return self.write({'errno':RET.OK,'errmsg':'OK'})
 
 
 

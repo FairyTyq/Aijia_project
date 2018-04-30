@@ -86,7 +86,7 @@ method:
 返回参数:
 
 {
-	"errno":0,
+	"errno":'0',
 	"errmsg":OK	
 }
 
@@ -98,7 +98,7 @@ Method:GET
 
 返回参数
 {
-	'errno':0,
+	'errno':'0',
 	'errmg''OK',
 	'data':{'name':'','avatar':''}
 }
@@ -128,9 +128,45 @@ name		string		用户昵称		是
 
 返回参数：
 {
-	'errno':0,
+	'errno':'0',
 	'erromsg':'OK',	
 }
+
+
+
+9.实名认真
+URL:/api/profile/auth
+Method:get
+传入参数：无
+返回参数：
+{
+	'errno':'0',
+	'errmsg':'OK',
+	'data':{'real_name':'my_name','id_card':'430***'}
+}
+
+
+Method:post
+传入参数：json
+名称			类型		说明			是否必须
+real_name	str		真实姓名		是
+id_card		str		身份证号		是
+
+{
+	'real_name':"my_name",
+	'id_card':'430****'
+}
+
+
+返回参数：
+
+{
+	'errno':'0',
+	'errmsg':'OK'
+}
+
+
+
 
 
 

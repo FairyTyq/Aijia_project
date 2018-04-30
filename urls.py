@@ -7,6 +7,7 @@ from handlers import Passport,VerifyCode,Profile
 from handlers.BaseHandler import StaticFileHandler
 
 handlers = [
+        (r'/api/profile/auth',Profile.AuthHandler),
         (r'/api/check_login',Passport.CheckLoginHandler),
         (r'/api/logout',Profile.LogoutHandler),
         (r'/api/profile',Profile.ProfileHandler),
