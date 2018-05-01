@@ -74,7 +74,8 @@ class LoginHandler(BaseHandler):
             usr = self.session_sql.query(UserProfile).filter(UserProfile.up_mobile==mobile).first()
             self.session.data = {
                     "mobile":mobile,
-                    "name":usr.up_name
+                    "name":usr.up_name,
+                    "id":usr.up_user_id
                     }
             try:
                 self.session.save()

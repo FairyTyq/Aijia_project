@@ -46,6 +46,7 @@ class HouseInfo(Base):
     hi_title = Column(VARCHAR(64),nullable=False,comment='房屋名称')
     hi_price = Column(Integer,nullable=False,comment='房屋价格')
     hi_area_id = Column(Integer,ForeignKey('ih_area_info.ai_area_id'),nullable=False,comment='房屋区域ID')
+    hi_address = Column(VARCHAR(512),nullable=False,default='',comment='地址')
     hi_room_count = Column(SMALLINT,nullable=False,default=1,comment='房间数')
     hi_acreage = Column(Integer,nullable=False,default=0,comment='房屋面积')
     hi_house_unit = Column(VARCHAR(32),nullable=False,default='',comment='房屋户型')
@@ -58,7 +59,7 @@ class HouseInfo(Base):
     hi_verify_status = Column(SMALLINT,nullable=False,default=0,comment='审核状态,0-待审核，1-审核未通过，2-审核通过')
     hi_online_status = Column(SMALLINT,nullable=False,default=1,comment='0-下线，1-上线')
     hi_index_image_url = Column(VARCHAR(256),nullable=True,comment='房屋主图片')
-    hi_utime = Column(DateTime,nullable=False,default=TIMESTAMP,comment='更新时间')
+    hi_utime = Column(DateTime,nullable=False,default=datetime.now(),comment='更新时间')
 
 class HouseFacility(Base):
     ''' 房屋设施表 '''
@@ -66,7 +67,7 @@ class HouseFacility(Base):
     hf_id = Column(BIGINT,nullable=False,primary_key=True,autoincrement=True,comment='自增ID')
     hf_house_id = Column(Integer,ForeignKey('ih_house_info.hi_house_id'),nullable=False,comment='房屋ID')
     hf_facility_id = Column(Integer,nullable=False,comment='房屋设施')
-    hf_ctime = Column(DateTime,nullable=False,default=TIMESTAMP,comment='创建时间')
+    hf_ctime = Column(DateTime,nullable=False,default=datetime.now(),comment='创建时间')
    
 
 class FacilityCatelog(Base):
@@ -74,7 +75,7 @@ class FacilityCatelog(Base):
     __tablename__='ih_facility_catelog'
     fc_id = Column(Integer,nullable=False,autoincrement=True,primary_key=True,comment='自增id')
     fc_name = Column(VARCHAR(32),nullable=False,comment='设施名称')
-    fc_ctime = Column(DateTime,nullable=False,default=TIMESTAMP,comment='创建时间')
+    fc_ctime = Column(DateTime,nullable=False,default=datetime.now(),comment='创建时间')
 
 
 class OrderInfo(Base):
@@ -90,8 +91,8 @@ class OrderInfo(Base):
     oi_amount = Column(Integer,nullable=False,comment='订单金额，单位分')
     oi_status = Column(SMALLINT,nullable=False,default=0,comment='订单状态，0-待接单，1-待支付，2-已支付，3-待评价，4-已完成，5-已取消，6-据接单')
     oi_comment = Column(TEXT,nullable=True,comment='订单评论')
-    oi_utime = Column(DateTime,nullable=True,default=TIMESTAMP,comment='最后更新时间')
-    oi_ctime = Column(DateTime,nullable=True,default=TIMESTAMP,comment='创建时间')
+    oi_utime = Column(DateTime,nullable=True,default=datetime.now(),comment='最后更新时间')
+    oi_ctime = Column(DateTime,nullable=True,default=datetime.now(),comment='创建时间')
 
 
 class House_image(Base):
@@ -100,7 +101,7 @@ class House_image(Base):
     hi_image_id = Column(BIGINT,nullable=False,autoincrement=True,primary_key=True,comment='图片id')
     hi_house_id = Column(Integer,ForeignKey('ih_house_info.hi_house_id'),nullable=False,comment='房屋id')
     hi_url = Column(VARCHAR(256),nullable=False,comment='图片url')
-    hi_ctime = Column(DateTime,nullable=False,default=TIMESTAMP,comment='创建时间')
+    hi_ctime = Column(DateTime,nullable=False,default=datetime.now(),comment='创建时间')
 
 
 if __name__ == '__main__':

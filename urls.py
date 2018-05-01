@@ -2,17 +2,20 @@
 
 import os
 
-from handlers import Passport,VerifyCode,Profile
+from handlers import Passport,VerifyCode,Profile,House
 # 提取静态文件的Handler
 from handlers.BaseHandler import StaticFileHandler
 
 handlers = [
-        (r'/api/profile/auth',Profile.AuthHandler),
+	(r'/api/house/image',House.HouseImgHandler),
+	(r'/api/house/info',House.HouseInfoHandler),
+	(r'/api/house/area',House.AreaInfoHandler),
         (r'/api/check_login',Passport.CheckLoginHandler),
         (r'/api/logout',Profile.LogoutHandler),
-        (r'/api/profile',Profile.ProfileHandler),
+        (r'/api/profile/auth',Profile.AuthHandler),
         (r'/api/profile/name',Profile.NicknameHandler),
         (r'/api/profile/avatar',Profile.AvatarHandler),
+        (r'/api/profile',Profile.ProfileHandler),
         (r'/api/login',Passport.LoginHandler),
         (r'/api/register',Passport.RegisterHandler),
         (r'/api/imagecode',VerifyCode.ImageCodeHandler),

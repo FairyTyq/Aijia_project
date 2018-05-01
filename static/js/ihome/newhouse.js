@@ -5,7 +5,7 @@ function getCookie(name) {
 
 $(document).ready(function(){
     $.get("/api/house/area", function (data) {
-        if ("0" == data.errcode) {
+        if ("0" == data.errno) {
             // html = template("area-tmpl", {areas: data.data});
             // $("#area-id").html(html);
             // console.log(html);
@@ -44,7 +44,7 @@ $(document).ready(function(){
             success: function (data) {
                 if ("4101" == data.errcode) {
                     location.href = "/login.html";
-                } else if ("0" == data.errcode) {
+                } else if ("0" == data.errno) {
                     $("#house-id").val(data.house_id);
                     $(".error-msg").hide();
                     $("#form-house-info").hide();
