@@ -63,9 +63,9 @@ $(document).ready(function(){
                 "X-XSRFTOKEN":getCookie("_xsrf"),
             },
             success: function(data){
-                if ("4101" == data.errcode) {
+                if ("4101" == data.errno) {
                     location.href = "/login.html";
-                } else if ("0" == data.errcode) {
+                } else if ("0" == data.errno) {
                     $(".house-image-cons").append('<img src="'+ data.url+'">');
                     $('.popup_con').fadeOut('fast');
                 }

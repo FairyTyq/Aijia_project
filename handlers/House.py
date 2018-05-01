@@ -74,31 +74,34 @@ class HouseInfoHandler(BaseHandler):
         except Exception as e:
             logging.error(e)
             return self.write({'errno':RET.DBERR,'errmsg':'db storage error'})
-        return self.write({'errno':RET.OK,'errmsg':'OK'})
+        return self.write({'errno':RET.OK,'errmsg':'OK','house_id':house_info.hi_house_id})
             
 
 class HouseImgHandler(BaseHandler):
     @require_logined
     def post(self):
+        img_data = self.request.files['house_image'][0]['body']
+        house_id = self.get_argument('house_id')
+        print'HOUSE_ID%s'%house_id
+        # 上传文件到七牛
         try:
-            img_data = self.request.files['house_image'][0]['body']
-            #house_id = self.json_args.get('house_id')
-            house_id = self.request.files['house_id']
-            print'HOUSE_ID%s'%house_id
+            img_name = storage(img_data)
         except Exception as e:
             logging.error(e)
-            return self.write({'errno':RET.PARAMERR,'errmsg':'参数错误'})
-        # 上传文件到七牛
-#        try:
-#            img_name = storage(img_data)
-#        except Exception as e:
-#            logging.error(e)
-#            img_name = None
-#        if not img_name:
-#            return self.write({'errno':RET.THIRDERR,'errmsg':'qiniu error'})
+            img_name = None
+        if not img_name:
+            return self.write({'errno':RET.THIRDERR,'errmsg':'qiniu error'})
         
-        #try:
-        #   img_tmp = House_image(hi_house_id=,hi_url=img_name) 
+        try:
+            img_tmp = House_image(hi_house_id=house_id,hi_url=img_name)
+            self.session_sql.add(img_tmp)
+            self.session_sql.commit()
+        except Exception as e:
+            logging.error(e)
+            return self.write({'errno':RET.DBERR,'errmsg':'upload failed'})
+        url = image_url_prefix+img_name
+        return self.write({'errno':RET.OK,'errmsg':'OK','url':url})
+            
 
         
 

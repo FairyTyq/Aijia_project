@@ -1990,3 +1990,128 @@
 [I 180501 07:40:21 web:2106] 200 POST /api/house/image (192.168.213.1) 6.82ms
 [I 180501 07:41:24 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
 [I 180501 07:41:26 autoreload:196] /home/min/tonado_project/handlers/Profile.py modified; restarting server
+[I 180501 14:56:47 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
+[I 180501 14:58:04 web:2106] 200 GET /static/js/ihome/newhouse.js (192.168.213.1) 367.19ms
+[I 180501 14:58:04 House:24] get data from redis
+[I 180501 14:58:04 web:2106] 304 GET /api/house/area (192.168.213.1) 126.94ms
+[I 180501 15:00:05 web:2106] 200 POST /api/house/info (192.168.213.1) 3314.99ms
+[E 180501 15:00:17 House:89] string indices must be integers, not str
+[I 180501 15:00:17 web:2106] 200 POST /api/house/image (192.168.213.1) 8.73ms
+[I 180501 15:01:10 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
+[I 180501 15:02:09 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
+[I 180501 15:02:20 web:2106] 304 GET /newhouse.html (192.168.213.1) 212.19ms
+[I 180501 15:02:20 House:24] get data from redis
+[I 180501 15:02:20 web:2106] 304 GET /api/house/area (192.168.213.1) 11.23ms
+[I 180501 15:03:23 web:2106] 200 POST /api/house/info (192.168.213.1) 388.68ms
+[I 180501 15:03:29 web:2106] 200 POST /api/house/image (192.168.213.1) 3.35ms
+[I 180501 15:04:44 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
+[I 180501 15:04:57 web:2106] 304 GET /newhouse.html (192.168.213.1) 77.68ms
+[I 180501 15:04:57 House:24] get data from redis
+[I 180501 15:04:57 web:2106] 304 GET /api/house/area (192.168.213.1) 8.03ms
+[I 180501 15:05:40 web:2106] 200 POST /api/house/info (192.168.213.1) 441.50ms
+[I 180501 15:05:44 web:2106] 200 POST /api/house/image (192.168.213.1) 16.57ms
+[I 180501 15:07:42 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
+[I 180501 15:07:56 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
+[I 180501 15:07:59 web:2106] 304 GET /newhouse.html (192.168.213.1) 14.57ms
+[I 180501 15:07:59 House:24] get data from redis
+[I 180501 15:07:59 web:2106] 304 GET /api/house/area (192.168.213.1) 29.27ms
+[I 180501 15:08:45 web:2106] 200 POST /api/house/info (192.168.213.1) 359.44ms
+[E 180501 15:08:49 House:89] 'HTTPServerRequest' object has no attribute 'get_argument'
+[I 180501 15:08:49 web:2106] 200 POST /api/house/image (192.168.213.1) 5.40ms
+[I 180501 15:13:58 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
+[I 180501 15:14:14 web:2106] 304 GET /newhouse.html (192.168.213.1) 39.29ms
+[I 180501 15:14:14 House:24] get data from redis
+[I 180501 15:14:14 web:2106] 304 GET /api/house/area (192.168.213.1) 5.42ms
+[I 180501 15:15:18 web:2106] 200 POST /api/house/info (192.168.213.1) 394.14ms
+[E 180501 15:15:20 House:89] 'house_image'
+[I 180501 15:15:20 web:2106] 200 POST /api/house/image (192.168.213.1) 5.42ms
+[I 180501 15:15:53 web:2106] 304 GET /newhouse.html (192.168.213.1) 9.34ms
+[I 180501 15:15:53 House:24] get data from redis
+[I 180501 15:15:53 web:2106] 304 GET /api/house/area (192.168.213.1) 3.29ms
+[I 180501 15:16:59 web:2106] 200 POST /api/house/info (192.168.213.1) 271.98ms
+[I 180501 15:17:06 web:2106] 200 POST /api/house/image (192.168.213.1) 103.37ms
+[I 180501 15:21:28 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
+[I 180501 15:21:47 web:2106] 304 GET /newhouse.html (192.168.213.1) 19.30ms
+[I 180501 15:21:47 House:24] get data from redis
+[I 180501 15:21:47 web:2106] 304 GET /api/house/area (192.168.213.1) 38.10ms
+[I 180501 15:22:36 web:2106] 200 POST /api/house/info (192.168.213.1) 284.42ms
+[I 180501 15:22:40 web:2106] 200 POST /api/house/image (192.168.213.1) 4.45ms
+[I 180501 15:32:22 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
+[I 180501 15:33:08 web:2106] 304 GET /newhouse.html (192.168.213.1) 13.10ms
+[I 180501 15:33:08 House:24] get data from redis
+[I 180501 15:33:08 web:2106] 304 GET /api/house/area (192.168.213.1) 7.85ms
+[I 180501 15:34:10 web:2106] 200 POST /api/house/info (192.168.213.1) 332.99ms
+[D 180501 15:34:15 connectionpool:824] Starting new HTTPS connection (1): uc.qbox.me
+[D 180501 15:34:15 connectionpool:396] https://uc.qbox.me:443 "GET /v1/query?ak=kiKv7Zb6y9Bn7_GKcYNh09COycP8yOOJrtg3CzT4&bucket=ihome HTTP/1.1" 200 261
+[D 180501 15:34:15 retry:200] Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+[D 180501 15:34:15 connectionpool:208] Starting new HTTP connection (1): up-z1.qiniu.com
+[D 180501 15:34:16 connectionpool:396] http://up-z1.qiniu.com:80 "POST / HTTP/1.1" 200 76
+[E 180501 15:34:16 House:100] 'Session' object has no attribute 'add'
+[I 180501 15:34:16 web:2106] 200 POST /api/house/image (192.168.213.1) 793.52ms
+[I 180501 15:34:49 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
+[I 180501 15:35:04 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
+[I 180501 15:35:20 web:2106] 304 GET /newhouse.html (192.168.213.1) 11.25ms
+[I 180501 15:35:20 House:24] get data from redis
+[I 180501 15:35:20 web:2106] 304 GET /api/house/area (192.168.213.1) 8.36ms
+[I 180501 15:36:22 web:2106] 200 POST /api/house/info (192.168.213.1) 331.22ms
+[D 180501 15:36:26 retry:200] Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+[D 180501 15:36:26 connectionpool:208] Starting new HTTP connection (1): up-z1.qiniu.com
+[D 180501 15:36:27 connectionpool:396] http://up-z1.qiniu.com:80 "POST / HTTP/1.1" 200 76
+[E 180501 15:36:27 House:100] (_mysql_exceptions.OperationalError) (1366, "Incorrect integer value: '' for column 'hi_house_id' at row 1") [SQL: u'INSERT INTO ih_house_image (hi_house_id, hi_url, hi_ctime) VALUES (%s, %s, %s)'] [parameters: (u'', u'FvIJ3c3QcZ5XLaVn6H4chHC7Pha_', datetime.datetime(2018, 5, 1, 15, 35, 5, 558958))] (Background on this error at: http://sqlalche.me/e/e3q8)
+[I 180501 15:36:27 web:2106] 200 POST /api/house/image (192.168.213.1) 299.50ms
+[I 180501 15:40:18 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
+[I 180501 15:40:35 web:2106] 304 GET /newhouse.html (192.168.213.1) 15.35ms
+[I 180501 15:40:35 House:24] get data from redis
+[I 180501 15:40:35 web:2106] 304 GET /api/house/area (192.168.213.1) 6.71ms
+[E 180501 15:41:40 web:1621] Uncaught exception POST /api/house/info (192.168.213.1)
+    HTTPServerRequest(protocol='http', host='192.168.213.128:8000', method='POST', uri='/api/house/info', version='HTTP/1.1', remote_ip='192.168.213.1')
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/min/tonado_project/utils/common.py", line 13, in wrapper
+        fun(request_handler_obj,*args,**kwargs)
+      File "/home/min/tonado_project/handlers/House.py", line 77, in post
+        return self.write({'errno':RET.OK,'errmsg':'OK','house_id':house_info.house_id})
+    AttributeError: 'HouseInfo' object has no attribute 'house_id'
+[E 180501 15:41:40 web:2106] 500 POST /api/house/info (192.168.213.1) 363.74ms
+[I 180501 15:43:10 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
+[I 180501 15:43:18 web:2106] 200 POST /api/house/info (192.168.213.1) 182.85ms
+[D 180501 15:43:24 retry:200] Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+[D 180501 15:43:24 connectionpool:208] Starting new HTTP connection (1): up-z1.qiniu.com
+[D 180501 15:43:24 connectionpool:396] http://up-z1.qiniu.com:80 "POST / HTTP/1.1" 200 76
+[I 180501 15:43:24 web:2106] 200 POST /api/house/image (192.168.213.1) 378.68ms
+[I 180501 15:44:03 web:2106] 200 GET /static/js/ihome/newhouse.js (192.168.213.1) 18.07ms
+[I 180501 15:48:12 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
+[I 180501 15:48:29 web:2106] 304 GET /newhouse.html (192.168.213.1) 12.97ms
+[I 180501 15:48:29 web:2106] 200 GET /static/js/ihome/newhouse.js (192.168.213.1) 5.14ms
+[I 180501 15:48:29 House:24] get data from redis
+[I 180501 15:48:29 web:2106] 304 GET /api/house/area (192.168.213.1) 7.65ms
+[I 180501 15:49:32 web:2106] 200 POST /api/house/info (192.168.213.1) 363.06ms
+[D 180501 15:49:39 retry:200] Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+[D 180501 15:49:39 connectionpool:208] Starting new HTTP connection (1): up-z1.qiniu.com
+[D 180501 15:49:39 connectionpool:396] http://up-z1.qiniu.com:80 "POST / HTTP/1.1" 200 76
+[I 180501 15:49:39 web:2106] 200 POST /api/house/image (192.168.213.1) 427.11ms
+[D 180501 15:50:03 connectionpool:396] http://up-z1.qiniu.com:80 "POST / HTTP/1.1" 200 76
+[I 180501 15:50:03 web:2106] 200 POST /api/house/image (192.168.213.1) 147.30ms
+[I 180501 15:53:33 web:2106] 304 GET /api/profile/auth (192.168.213.1) 103.41ms
+[I 180501 15:54:29 web:2106] 304 GET /myhouse.html (192.168.213.1) 68.08ms
+[I 180501 15:54:30 web:2106] 304 GET /api/profile/auth (192.168.213.1) 14.95ms
+[I 180501 15:56:22 web:2106] 304 GET /static/js/ihome/my.js (192.168.213.1) 22.39ms
+[I 180501 15:56:22 web:2106] 304 GET /api/profile (192.168.213.1) 12.84ms
+[I 180501 15:56:24 web:2106] 304 GET /api/profile/auth (192.168.213.1) 12.72ms
+[I 180501 15:56:26 web:2106] 304 GET /api/profile (192.168.213.1) 29.69ms
+[I 180501 15:56:30 web:2106] 304 GET /api/profile/auth (192.168.213.1) 12.95ms
+[I 180501 15:56:43 web:2106] 304 GET /api/profile (192.168.213.1) 13.13ms
+[I 180501 15:56:48 web:2106] 200 GET /orders.html (192.168.213.1) 71.08ms
+[I 180501 15:56:48 web:2106] 200 GET /static/js/ihome/orders.js (192.168.213.1) 54.67ms
+[I 180501 15:56:48 web:2106] 200 GET /static/css/ihome/orders.css (192.168.213.1) 36.69ms
+[W 180501 15:56:49 web:2106] 404 GET /api/order/my?role=custom (192.168.213.1) 32.08ms
+[I 180501 15:56:52 web:2106] 304 GET /api/profile (192.168.213.1) 24.46ms
+[I 180501 15:56:54 web:2106] 200 GET /lorders.html (192.168.213.1) 17.87ms
+[I 180501 15:56:54 web:2106] 200 GET /static/js/ihome/lorders.js (192.168.213.1) 8.00ms
+[W 180501 15:56:54 web:2106] 404 GET /api/order/my?role=landlord (192.168.213.1) 5.27ms
+[I 180501 15:57:04 web:2106] 304 GET /api/profile (192.168.213.1) 20.82ms
+[I 180501 15:57:06 web:2106] 304 GET /api/profile/auth (192.168.213.1) 9.29ms
+[I 180501 15:57:12 web:2106] 304 GET /api/profile (192.168.213.1) 11.95ms
+[I 180501 15:57:53 web:2106] 304 GET /api/profile/auth (192.168.213.1) 9.89ms
+[I 180501 16:01:27 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
