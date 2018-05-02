@@ -6,8 +6,8 @@ import json
 from .BaseHandler import BaseHandler
 from utils.common import require_logined
 from utils.response_code import RET
-from models import AreaInfo,HouseInfo,HouseFacility,House_image
-from constants import AREA_INFO_REDIS_EXPIRES_SECONDS
+from models import AreaInfo,HouseInfo,HouseFacility,House_image,UserProfile
+from constants import AREA_INFO_REDIS_EXPIRES_SECONDS,MYHOUSES_INFO_REDIS_EXPIRES_SECONDS
 from utils.image_storage import storage
 from config import image_url_prefix
 
@@ -74,10 +74,72 @@ class HouseInfoHandler(BaseHandler):
         except Exception as e:
             logging.error(e)
             return self.write({'errno':RET.DBERR,'errmsg':'db storage error'})
+        self.redis.delete('My_houses')
         return self.write({'errno':RET.OK,'errmsg':'OK','house_id':house_info.hi_house_id})
-            
+
+    @require_logined
+    def get(self):
+        '''房屋信息detail页面'''
+        house_id = self.get_argument('house_id')
+        print 'HOUSE ID:%s'%house_id
+        # 查询房屋信息 
+        try:
+            house = self.session_sql.query(HouseInfo).filter(HouseInfo.hi_house_id==house_id).first()
+        except Exception as e:
+            logging.error(e)
+            return self.write({'errno':RET.DBERR,'errmsg':'failed get data from darabase'})
+        # 查询房东信息
+        try:
+            owner = self.session_sql.query(UserProfile).filter(UserProfile.up_user_id==house.hi_user_id).first()
+        except Exception as e:
+            logging.error(e)
+        
+        # 查询房屋设施
+        try:
+            facility = self.session_sql.query(HouseFacility).filter(HouseFacility.hf_house_id==house_id).all()
+        except Exception as e:
+            logging.error(e)
+        facilities = []
+        if facility:
+            for f in facility:
+                facilities.append(f.hf_facility_id)
+        # 查询房屋图片
+        try:
+            house_imgs = self.session_sql.query(House_image).filter(House_image.hi_house_id==house_id).all()
+        except Exception as e:
+            logging.error(e)
+        imgs_list = []
+        if house_imgs:
+            for house_img in house_imgs:
+                imgs_list.append(image_url_prefix+house_img.hi_url)
+            print "**--HOUSE IMGS--**:%s"%imgs_list
+        
+        data ={
+                "images":imgs_list,
+                "price":house.hi_price,
+                "user_id":house.hi_house_id,
+                "user_avatar":image_url_prefix+owner.up_avatar,
+                "title":house.hi_title,
+                "user_name":owner.up_name,
+                "address":house.hi_address,
+                "room_count":house.hi_room_count,
+                "acreage":house.hi_acreage,
+                "unit":house.hi_house_unit,
+                "capacity":house.hi_capacity,
+                "beds":house.hi_beds,
+                "deposit":house.hi_deposit,
+                "min_days":house.hi_min_days,
+                "max_days":house.hi_max_days,
+                "facilities":facilities,
+                "comment":""
+            }
+        return self.write({"errno":RET.OK,"errmsg":"OK","data":data})
+
+
+
 
 class HouseImgHandler(BaseHandler):
+    '''房屋图片 '''
     @require_logined
     def post(self):
         img_data = self.request.files['house_image'][0]['body']
@@ -99,13 +161,69 @@ class HouseImgHandler(BaseHandler):
         except Exception as e:
             logging.error(e)
             return self.write({'errno':RET.DBERR,'errmsg':'upload failed'})
+        # 设置最新上传的图片为房源首页图片
+        try:
+            house_tmp = self.session_sql.query(HouseInfo).filter(HouseInfo.hi_house_id==house_id).first()
+        except Exception as e:
+            logging.error(e)
+        house_tmp.hi_index_image_url = img_name
+        self.session_sql.commit()
         url = image_url_prefix+img_name
         return self.write({'errno':RET.OK,'errmsg':'OK','url':url})
             
 
         
+class MyHouseHandler(BaseHandler):
+    '''用户房源'''
+    @require_logined
+    def get(self):
+        # 尝试从redis中获取用户房屋信息
+        try:
+           houses_info_redis = self.redis.get("My_houses")
+        except Exception as e:
+            logging.error(e)
+            houses_info_redis = ''
+        if houses_info_redis:
+            print "GET INFO FROM REDIS \n REDIS HOUSE INFO : %s"%houses_info_redis
+            return self.write('{"errono":%s,"errmsg":"OK","houses":%s}'%(RET.OK,houses_info_redis))
 
-
+        # 未从redis中读取到数据，根据用户id获取该用户名下所有的房子信息
+        try:
+            my_houses = self.session_sql.query(HouseInfo).filter(HouseInfo.hi_user_id==self.session.data['id']).all()
+            print 'Users houses :%s'%my_houses
+        except Exception as e:
+            logging.error(e)
+            return self.write({'errno':RET.DBERR,'errmsg':'database err'})
+        # 遍历从mysql中查询到的结果，每个房源信息存储成一个字典，该用户的所有房源信息存储成一个列表返回个前端
+        h_list = []
+        if my_houses:
+            for h in my_houses:
+                # 获取房屋所在区域名称
+                try:
+                    a_name = self.session_sql.query(AreaInfo).filter(AreaInfo.ai_area_id == h.hi_area_id).first().ai_name
+                except Exception as e:
+                    logging.error(e)
+                # 组合图片url
+                image_name =h.hi_index_image_url,
+                if image_name == (None,):
+                    image_name = ''
+                else:
+                    image_name = image_name[0]
+                print 'Image Name1:%s,Type1:%s'%(image_name,type(image_name))
+                #print 'Image Name2:%s,Type2:%s'%(image_name[0],type(image_name))
+                # 房源信息存入字典
+                h_tmp = {
+                        "house_id":h.hi_house_id,        
+                        "img_url":image_url_prefix+image_name,
+                        "area_name":a_name,
+                        "ctime":h.hi_utime.strftime("%Y-%m-%d"),
+                        "price":h.hi_price,
+                        "title":h.hi_title
+                    }
+                # 将字典存入列表
+                h_list.append(h_tmp)
+            self.redis.setex("My_houses",MYHOUSES_INFO_REDIS_EXPIRES_SECONDS,json.dumps(h_list))
+        return self.write({'errno':RET.OK,'errmsg':'OK','houses':h_list})
 
 
 
