@@ -203,8 +203,43 @@ facility
     'house_id':house_id
 }
 
+12 房屋详细信息拉取
+URL: /api/house/info
+Method:GET
+传入参数：
+house_id
 
-12.房屋图片上传
+返回参数
+{
+	"errno":0
+	"errmsg":"OK"
+	"user_id":1
+    "data ":{
+                "hid":1,
+                "images":[img1_url,img2_url,...],
+                "price":100,
+                "user_id":2,
+                "user_avatar":avatar_url,
+                "title":"title_example",
+                "user_name":"name_example",
+                "address":长安街1号,
+                "room_count":3,
+                "acreage":100,
+                "unit":两室一厅,
+                "capacity":2,
+                "beds":双人床,
+                "deposit":1500,
+                "min_days":1,
+                "max_days":0,
+                "facilities":[1,2,8,...],
+                "comments":[]
+            }
+
+}
+
+
+
+13.房屋图片上传
 URL :/api/house/image
 Method:POST
 传入参数：
@@ -220,7 +255,33 @@ house_id    int
 }
 
 
-
+14.用户个人房源信息拉取
+URL:/api/house/my
+Method:GET
+传入参数:无
+返回参数：
+{
+	'errno':0
+	'errmsg':'OK'
+	'houses':[
+		{
+			'house_id':1
+			'img_url':img1_url
+			'area_name':朝阳区
+			'ctime':2018-05-26
+			'price':25600
+			'title':碧桂园1号
+		}
+		{
+			'house_id':
+			'img_url':img2_url
+			'area_name':朝阳区
+			'ctime':2018-05-26
+			'price':19600
+			'title':碧桂园2号
+		}
+	]
+}
 
 
 

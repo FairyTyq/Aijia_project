@@ -115,9 +115,10 @@ class HouseInfoHandler(BaseHandler):
             print "**--HOUSE IMGS--**:%s"%imgs_list
         
         data ={
+                "hid":house_id,
                 "images":imgs_list,
-                "price":house.hi_price,
-                "user_id":house.hi_house_id,
+                "price":house.hi_price*100,
+                "user_id":house.hi_user_id,
                 "user_avatar":image_url_prefix+owner.up_avatar,
                 "title":house.hi_title,
                 "user_name":owner.up_name,
@@ -131,9 +132,9 @@ class HouseInfoHandler(BaseHandler):
                 "min_days":house.hi_min_days,
                 "max_days":house.hi_max_days,
                 "facilities":facilities,
-                "comment":""
+                "comments":[]
             }
-        return self.write({"errno":RET.OK,"errmsg":"OK","data":data})
+        self.write({"errno":RET.OK,"errmsg":"OK","data":data,"user_id":self.session.data.get('id')})
 
 
 
@@ -217,7 +218,7 @@ class MyHouseHandler(BaseHandler):
                         "img_url":image_url_prefix+image_name,
                         "area_name":a_name,
                         "ctime":h.hi_utime.strftime("%Y-%m-%d"),
-                        "price":h.hi_price,
+                        "price":h.hi_price*100,
                         "title":h.hi_title
                     }
                 # 将字典存入列表

@@ -12,7 +12,7 @@ from datetime import datetime
 if sys.getdefaultencoding() != 'utf-8':
     reload(sys)
     sys.setdefaultencoding('utf-8')
-engine = create_engine('mysql+mysqldb://root:123@localhost:3306/ihome?charset=utf8')
+engine = create_engine('mysql+mysqldb://root:123qwe@localhost:3306/ihome?charset=utf8')
 
 Base = declarative_base()
 
