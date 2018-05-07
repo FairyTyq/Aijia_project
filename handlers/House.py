@@ -227,7 +227,24 @@ class MyHouseHandler(BaseHandler):
         return self.write({'errno':RET.OK,'errmsg':'OK','houses':h_list})
 
 
+class IndexInfoHandler(BaseHandler):
+    """ 首页信息 """
+    def get(self):
+        # 区域信息获取
+        area_info = self.session_sql.query(AreaInfo).all()
+        area_list = []
+        for i in area_info:
+            ai_tmp = {"area_id":i.ai_area_id,"name":i.ai_name}
+            area_list.append(ai_tmp)
+        
+        #房屋信息获取
+        house_info = self.session_sql.query(HouseInfo).all()
+        house_list = []
+        for h in house_info:
+            hi_tmp = {"house_id":h.hi_house_id,"img_url":image_url_prefix+h.hi_index_image_url,"title":h.hi_title}
+            house_list.append(hi_tmp)
 
+        self.write({"errno":RET.OK,"errmsg":"OK","areas":area_list,"houses":house_list})
 
 
 

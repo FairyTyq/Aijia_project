@@ -3162,3 +3162,322 @@
 [I 180506 06:33:16 web:2106] 304 GET /api/house/info?house_id=24 (192.168.213.1) 200.61ms
 [W 180506 06:33:16 web:2106] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (192.168.213.1) 2.02ms
 [I 180506 06:36:14 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
+[I 180507 06:35:51 web:2106] 304 GET /static/js/ihome/index.js (192.168.213.1) 376.17ms
+[I 180507 06:35:52 web:2106] 200 GET /api/check_login (192.168.213.1) 41.67ms
+[W 180507 06:35:52 web:2106] 404 GET /api/house/index (192.168.213.1) 118.79ms
+[W 180507 06:35:55 web:2106] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (192.168.213.1) 79.29ms
+[I 180507 06:36:12 web:2106] 304 GET / (192.168.213.1) 51.75ms
+[I 180507 06:36:13 web:2106] 304 GET /api/check_login (192.168.213.1) 3.41ms
+[W 180507 06:36:13 web:2106] 404 GET /api/house/index (192.168.213.1) 1.93ms
+[W 180507 06:36:13 web:2106] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (192.168.213.1) 2.23ms
+[I 180507 06:36:21 web:2106] 200 GET /login.html (192.168.213.1) 23.89ms
+[I 180507 06:36:21 web:2106] 200 GET /static/css/ihome/login.css (192.168.213.1) 41.32ms
+[I 180507 06:36:21 web:2106] 200 GET /static/js/ihome/login.js (192.168.213.1) 57.53ms
+[I 180507 06:36:30 web:2106] 200 POST /api/login (192.168.213.1) 2064.37ms
+[W 180507 06:36:30 web:2106] 404 GET /api/house/index (192.168.213.1) 2.36ms
+[I 180507 06:36:30 web:2106] 200 GET /api/check_login (192.168.213.1) 27.08ms
+[W 180507 06:36:30 web:2106] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (192.168.213.1) 2.06ms
+[W 180507 15:01:53 web:2106] 404 GET /api/house/index (192.168.213.1) 170.58ms
+[I 180507 15:01:53 web:2106] 304 GET /api/check_login (192.168.213.1) 174.09ms
+[I 180507 15:01:54 web:2106] 304 GET /static/js/ihome/my.js (192.168.213.1) 67.36ms
+[I 180507 15:01:56 web:2106] 304 GET /api/profile (192.168.213.1) 1820.44ms
+[W 180507 15:02:11 web:2106] 404 GET /api/house/index (192.168.213.1) 3.07ms
+[I 180507 15:02:11 web:2106] 304 GET /api/check_login (192.168.213.1) 13.93ms
+[W 180507 15:02:11 web:2106] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (192.168.213.1) 39.18ms
+[I 180507 15:08:48 autoreload:196] /home/min/tonado_project/urls.py modified; restarting server
+[I 180507 15:11:47 web:2106] 304 GET / (192.168.213.1) 101.83ms
+[I 180507 15:11:47 web:2106] 304 GET /api/check_login (192.168.213.1) 91.60ms
+[E 180507 15:11:47 http1connection:54] Uncaught exception
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/http1connection.py", line 237, in _read_message
+        delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/routing.py", line 256, in finish
+        self.delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/httpserver.py", line 230, in finish
+        self.request_callback(self.request)
+      File "/home/min/tonado_project/handlers/House.py", line 232, in IndexInfoHandler
+        self.write('nothing')
+    NameError: global name 'self' is not defined
+[W 180507 15:11:47 web:2106] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (192.168.213.1) 69.44ms
+[E 180507 15:11:47 http1connection:54] Uncaught exception
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/http1connection.py", line 237, in _read_message
+        delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/routing.py", line 256, in finish
+        self.delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/httpserver.py", line 230, in finish
+        self.request_callback(self.request)
+      File "/home/min/tonado_project/handlers/House.py", line 232, in IndexInfoHandler
+        self.write('nothing')
+    NameError: global name 'self' is not defined
+[E 180507 15:11:47 http1connection:54] Uncaught exception
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/http1connection.py", line 237, in _read_message
+        delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/routing.py", line 256, in finish
+        self.delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/httpserver.py", line 230, in finish
+        self.request_callback(self.request)
+      File "/home/min/tonado_project/handlers/House.py", line 232, in IndexInfoHandler
+        self.write('nothing')
+    NameError: global name 'self' is not defined
+[E 180507 15:11:47 http1connection:54] Uncaught exception
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/http1connection.py", line 237, in _read_message
+        delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/routing.py", line 256, in finish
+        self.delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/httpserver.py", line 230, in finish
+        self.request_callback(self.request)
+      File "/home/min/tonado_project/handlers/House.py", line 232, in IndexInfoHandler
+        self.write('nothing')
+    NameError: global name 'self' is not defined
+[E 180507 15:11:47 http1connection:54] Uncaught exception
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/http1connection.py", line 237, in _read_message
+        delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/routing.py", line 256, in finish
+        self.delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/httpserver.py", line 230, in finish
+        self.request_callback(self.request)
+      File "/home/min/tonado_project/handlers/House.py", line 232, in IndexInfoHandler
+        self.write('nothing')
+    NameError: global name 'self' is not defined
+[E 180507 15:11:47 http1connection:54] Uncaught exception
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/http1connection.py", line 237, in _read_message
+        delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/routing.py", line 256, in finish
+        self.delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/httpserver.py", line 230, in finish
+        self.request_callback(self.request)
+      File "/home/min/tonado_project/handlers/House.py", line 232, in IndexInfoHandler
+        self.write('nothing')
+    NameError: global name 'self' is not defined
+[E 180507 15:11:47 http1connection:54] Uncaught exception
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/http1connection.py", line 237, in _read_message
+        delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/routing.py", line 256, in finish
+        self.delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/httpserver.py", line 230, in finish
+        self.request_callback(self.request)
+      File "/home/min/tonado_project/handlers/House.py", line 232, in IndexInfoHandler
+        self.write('nothing')
+    NameError: global name 'self' is not defined
+[I 180507 15:14:21 web:2106] 304 GET / (192.168.213.1) 4.07ms
+[I 180507 15:14:22 web:2106] 304 GET /api/check_login (192.168.213.1) 7.86ms
+[E 180507 15:14:22 http1connection:54] Uncaught exception
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/http1connection.py", line 237, in _read_message
+        delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/routing.py", line 256, in finish
+        self.delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/httpserver.py", line 230, in finish
+        self.request_callback(self.request)
+      File "/home/min/tonado_project/handlers/House.py", line 232, in IndexInfoHandler
+        self.write('nothing')
+    NameError: global name 'self' is not defined
+[E 180507 15:14:22 http1connection:54] Uncaught exception
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/http1connection.py", line 237, in _read_message
+        delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/routing.py", line 256, in finish
+        self.delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/httpserver.py", line 230, in finish
+        self.request_callback(self.request)
+      File "/home/min/tonado_project/handlers/House.py", line 232, in IndexInfoHandler
+        self.write('nothing')
+    NameError: global name 'self' is not defined
+[E 180507 15:14:22 http1connection:54] Uncaught exception
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/http1connection.py", line 237, in _read_message
+        delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/routing.py", line 256, in finish
+        self.delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/httpserver.py", line 230, in finish
+        self.request_callback(self.request)
+      File "/home/min/tonado_project/handlers/House.py", line 232, in IndexInfoHandler
+        self.write('nothing')
+    NameError: global name 'self' is not defined
+[E 180507 15:14:22 http1connection:54] Uncaught exception
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/http1connection.py", line 237, in _read_message
+        delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/routing.py", line 256, in finish
+        self.delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/httpserver.py", line 230, in finish
+        self.request_callback(self.request)
+      File "/home/min/tonado_project/handlers/House.py", line 232, in IndexInfoHandler
+        self.write('nothing')
+    NameError: global name 'self' is not defined
+[E 180507 15:14:22 http1connection:54] Uncaught exception
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/http1connection.py", line 237, in _read_message
+        delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/routing.py", line 256, in finish
+        self.delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/httpserver.py", line 230, in finish
+        self.request_callback(self.request)
+      File "/home/min/tonado_project/handlers/House.py", line 232, in IndexInfoHandler
+        self.write('nothing')
+    NameError: global name 'self' is not defined
+[E 180507 15:14:22 http1connection:54] Uncaught exception
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/http1connection.py", line 237, in _read_message
+        delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/routing.py", line 256, in finish
+        self.delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/httpserver.py", line 230, in finish
+        self.request_callback(self.request)
+      File "/home/min/tonado_project/handlers/House.py", line 232, in IndexInfoHandler
+        self.write('nothing')
+    NameError: global name 'self' is not defined
+[E 180507 15:14:22 http1connection:54] Uncaught exception
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/http1connection.py", line 237, in _read_message
+        delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/routing.py", line 256, in finish
+        self.delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/httpserver.py", line 230, in finish
+        self.request_callback(self.request)
+      File "/home/min/tonado_project/handlers/House.py", line 232, in IndexInfoHandler
+        self.write('nothing')
+    NameError: global name 'self' is not defined
+[W 180507 15:14:22 web:2106] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (192.168.213.1) 2.87ms
+[I 180507 15:25:03 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
+[I 180507 15:26:09 web:2106] 304 GET / (192.168.213.1) 91.55ms
+[I 180507 15:26:09 web:2106] 304 GET /api/check_login (192.168.213.1) 4.46ms
+[E 180507 15:26:09 http1connection:54] Uncaught exception
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/http1connection.py", line 237, in _read_message
+        delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/routing.py", line 256, in finish
+        self.delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/httpserver.py", line 230, in finish
+        self.request_callback(self.request)
+      File "/home/min/tonado_project/handlers/House.py", line 232, in IndexInfoHandler
+        area_info = self.session_sql.query(AreaInfo).all()
+    NameError: global name 'self' is not defined
+[E 180507 15:26:09 http1connection:54] Uncaught exception
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/http1connection.py", line 237, in _read_message
+        delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/routing.py", line 256, in finish
+        self.delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/httpserver.py", line 230, in finish
+        self.request_callback(self.request)
+      File "/home/min/tonado_project/handlers/House.py", line 232, in IndexInfoHandler
+        area_info = self.session_sql.query(AreaInfo).all()
+    NameError: global name 'self' is not defined
+[E 180507 15:26:09 http1connection:54] Uncaught exception
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/http1connection.py", line 237, in _read_message
+        delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/routing.py", line 256, in finish
+        self.delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/httpserver.py", line 230, in finish
+        self.request_callback(self.request)
+      File "/home/min/tonado_project/handlers/House.py", line 232, in IndexInfoHandler
+        area_info = self.session_sql.query(AreaInfo).all()
+    NameError: global name 'self' is not defined
+[E 180507 15:26:09 http1connection:54] Uncaught exception
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/http1connection.py", line 237, in _read_message
+        delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/routing.py", line 256, in finish
+        self.delegate.finish()
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/httpserver.py", line 230, in finish
+        self.request_callback(self.request)
+      File "/home/min/tonado_project/handlers/House.py", line 232, in IndexInfoHandler
+        area_info = self.session_sql.query(AreaInfo).all()
+    NameError: global name 'self' is not defined
+[W 180507 15:26:09 web:2106] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (192.168.213.1) 35.16ms
+[I 180507 15:27:44 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
+[I 180507 15:27:56 web:2106] 304 GET / (192.168.213.1) 12.47ms
+[I 180507 15:27:56 web:2106] 304 GET /api/check_login (192.168.213.1) 4.48ms
+[E 180507 15:27:57 web:1621] Uncaught exception GET /api/house/index (192.168.213.1)
+    HTTPServerRequest(protocol='http', host='192.168.213.128:8000', method='GET', uri='/api/house/index', version='HTTP/1.1', remote_ip='192.168.213.1')
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/min/tonado_project/handlers/House.py", line 235, in get
+        self.write({'errno':RET.OK,'errmsg':'OK',data:''})
+    NameError: global name 'data' is not defined
+[E 180507 15:27:57 web:2106] 500 GET /api/house/index (192.168.213.1) 758.34ms
+[W 180507 15:27:57 web:2106] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (192.168.213.1) 8.46ms
+[I 180507 15:28:45 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
+[I 180507 15:29:08 web:2106] 304 GET / (192.168.213.1) 18.18ms
+[I 180507 15:29:08 web:2106] 304 GET /api/check_login (192.168.213.1) 12.52ms
+[I 180507 15:29:08 web:2106] 200 GET /api/house/index (192.168.213.1) 216.11ms
+[W 180507 15:29:08 web:2106] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (192.168.213.1) 79.86ms
+[I 180507 15:36:11 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
+[I 180507 15:36:56 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
+[I 180507 15:37:04 web:2106] 304 GET / (192.168.213.1) 35.37ms
+[I 180507 15:37:04 web:2106] 304 GET /api/check_login (192.168.213.1) 6.95ms
+[I 180507 15:37:04 web:2106] 304 GET /api/house/index (192.168.213.1) 243.03ms
+[W 180507 15:37:04 web:2106] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (192.168.213.1) 9.81ms
+[I 180507 15:38:11 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
+[I 180507 15:38:16 web:2106] 304 GET / (192.168.213.1) 37.01ms
+[I 180507 15:38:16 web:2106] 304 GET /api/check_login (192.168.213.1) 16.23ms
+[I 180507 15:38:16 web:2106] 200 GET /api/house/index (192.168.213.1) 276.25ms
+[W 180507 15:38:17 web:2106] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (192.168.213.1) 18.39ms
+[I 180507 15:42:08 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
+[I 180507 15:42:11 web:2106] 304 GET / (192.168.213.1) 12.16ms
+[I 180507 15:42:12 web:2106] 200 GET /api/house/index (192.168.213.1) 158.11ms
+[I 180507 15:42:12 web:2106] 304 GET /api/check_login (192.168.213.1) 9.85ms
+[W 180507 15:42:12 web:2106] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (192.168.213.1) 25.09ms
+[I 180507 15:42:47 web:2106] 200 GET /search.html?aid=4&aname=%E6%B5%B7%E6%B7%80%E5%8C%BA&sd=2018-05-08&ed=2018-05-17 (192.168.213.1) 81.67ms
+[I 180507 15:42:48 web:2106] 200 GET /static/js/ihome/search.js (192.168.213.1) 103.94ms
+[I 180507 15:42:48 web:2106] 200 GET /static/css/ihome/search.css (192.168.213.1) 60.28ms
+[I 180507 15:42:48 web:2106] 200 GET /api/house/area (192.168.213.1) 44.45ms
+[W 180507 15:43:23 web:2106] 404 GET /api/house/list2?aid=&sd=2018-05-08&ed=2018-05-17&sk=new&p=1 (192.168.213.1) 1.73ms
+[I 180507 15:43:39 web:2106] 304 GET /api/house/index (192.168.213.1) 14.34ms
+[I 180507 15:43:39 web:2106] 304 GET /api/check_login (192.168.213.1) 24.20ms
+[W 180507 15:43:39 web:2106] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (192.168.213.1) 12.38ms
+[I 180507 15:46:28 web:2106] 200 GET /search.html?aid=&aname=&sd=&ed= (192.168.213.1) 5.59ms
+[I 180507 15:46:29 House:24] get data from redis
+[I 180507 15:46:29 web:2106] 200 GET /api/house/area (192.168.213.1) 5.95ms
+[I 180507 15:47:15 web:2106] 304 GET /api/check_login (192.168.213.1) 8.79ms
+[I 180507 15:47:15 web:2106] 304 GET /api/house/index (192.168.213.1) 15.41ms
+[W 180507 15:47:15 web:2106] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (192.168.213.1) 4.50ms
+[I 180507 15:59:58 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
+[I 180507 16:00:25 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
+[I 180507 16:00:40 web:2106] 304 GET / (192.168.213.1) 80.76ms
+[I 180507 16:00:40 web:2106] 304 GET /api/check_login (192.168.213.1) 16.66ms
+[E 180507 16:00:41 web:1621] Uncaught exception GET /api/house/index (192.168.213.1)
+    HTTPServerRequest(protocol='http', host='192.168.213.128:8000', method='GET', uri='/api/house/index', version='HTTP/1.1', remote_ip='192.168.213.1')
+    Traceback (most recent call last):
+      File "/home/min/.virtualenvs/py2_tornado/local/lib/python2.7/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/min/tonado_project/handlers/House.py", line 244, in get
+        hi_tmp = {"house_id":h.hi_house_id,"img_url":h.hi_index_image_url,title:h.hi_title}
+    NameError: global name 'title' is not defined
+[E 180507 16:00:41 web:2106] 500 GET /api/house/index (192.168.213.1) 347.07ms
+[W 180507 16:00:41 web:2106] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (192.168.213.1) 48.29ms
+[I 180507 16:01:04 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
+[I 180507 16:01:09 web:2106] 304 GET / (192.168.213.1) 9.48ms
+[I 180507 16:01:10 web:2106] 304 GET /api/check_login (192.168.213.1) 4.49ms
+[I 180507 16:01:10 web:2106] 200 GET /api/house/index (192.168.213.1) 288.99ms
+[W 180507 16:01:10 web:2106] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (192.168.213.1) 7.59ms
+[I 180507 16:02:32 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
+[I 180507 16:02:35 web:2106] 304 GET / (192.168.213.1) 56.88ms
+[I 180507 16:02:36 web:2106] 304 GET /api/check_login (192.168.213.1) 8.66ms
+[I 180507 16:02:36 web:2106] 200 GET /api/house/index (192.168.213.1) 372.34ms
+[W 180507 16:02:36 web:2106] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (192.168.213.1) 6.25ms
+[W 180507 16:02:36 web:2106] 404 GET /FutzS5hx-yJoSrrAVv4mdtzBQoxo (192.168.213.1) 10.75ms
+[W 180507 16:02:36 web:2106] 404 GET /Fhm0OTbksKYDoXtL8EWB74mwLHEd (192.168.213.1) 2.27ms
+[I 180507 16:02:53 web:2106] 304 GET / (192.168.213.1) 2.29ms
+[I 180507 16:02:53 web:2106] 304 GET /api/check_login (192.168.213.1) 7.06ms
+[I 180507 16:02:53 web:2106] 304 GET /api/house/index (192.168.213.1) 31.90ms
+[W 180507 16:02:53 web:2106] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (192.168.213.1) 4.29ms
+[W 180507 16:02:53 web:2106] 404 GET /Fhm0OTbksKYDoXtL8EWB74mwLHEd (192.168.213.1) 2.13ms
+[W 180507 16:02:53 web:2106] 404 GET /FutzS5hx-yJoSrrAVv4mdtzBQoxo (192.168.213.1) 2.34ms
+[I 180507 16:03:06 web:2106] 304 GET /api/profile (192.168.213.1) 15.81ms
+[W 180507 16:03:10 web:2106] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (192.168.213.1) 1.80ms
+[I 180507 16:04:01 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
+[I 180507 16:04:03 web:2106] 304 GET / (192.168.213.1) 41.96ms
+[I 180507 16:04:04 web:2106] 304 GET /api/check_login (192.168.213.1) 16.24ms
+[I 180507 16:04:04 web:2106] 200 GET /api/house/index (192.168.213.1) 228.62ms
+[W 180507 16:04:04 web:2106] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (192.168.213.1) 5.96ms
+[I 180507 16:04:46 autoreload:196] /home/min/tonado_project/handlers/House.py modified; restarting server
