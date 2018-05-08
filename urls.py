@@ -7,6 +7,7 @@ from handlers import Passport,VerifyCode,Profile,House
 from handlers.BaseHandler import StaticFileHandler
 
 handlers = [
+	(r'/api/house/list2',House.HouseListHandler),
 	(r'/api/house/index',House.IndexInfoHandler),
 	(r'/api/house/my',House.MyHouseHandler),
 	(r'/api/house/image',House.HouseImgHandler),

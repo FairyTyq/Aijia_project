@@ -8,6 +8,7 @@ from utils.common import require_logined
 from utils.response_code import RET
 from models import AreaInfo,HouseInfo,HouseFacility,House_image,UserProfile
 from constants import AREA_INFO_REDIS_EXPIRES_SECONDS,MYHOUSES_INFO_REDIS_EXPIRES_SECONDS
+from constants import HOUSE_LIST_PAGE_CAPACITY,HOUSE_LIST_REDIS_CACHED_PAGE,HOUSE_LIST_REDIS_EXPIRES_SECONDS
 from utils.image_storage import storage
 from config import image_url_prefix
 
@@ -74,7 +75,7 @@ class HouseInfoHandler(BaseHandler):
         except Exception as e:
             logging.error(e)
             return self.write({'errno':RET.DBERR,'errmsg':'db storage error'})
-        self.redis.delete('My_houses')
+        self.redis.delete('My_houses_%s'%self.session.data.get('id'))
         return self.write({'errno':RET.OK,'errmsg':'OK','house_id':house_info.hi_house_id})
 
     @require_logined
@@ -180,7 +181,7 @@ class MyHouseHandler(BaseHandler):
     def get(self):
         # 尝试从redis中获取用户房屋信息
         try:
-           houses_info_redis = self.redis.get("My_houses")
+            houses_info_redis = self.redis.get("My_houses_%s"%self.session.data.get('id'))
         except Exception as e:
             logging.error(e)
             houses_info_redis = ''
@@ -223,7 +224,7 @@ class MyHouseHandler(BaseHandler):
                     }
                 # 将字典存入列表
                 h_list.append(h_tmp)
-            self.redis.setex("My_houses",MYHOUSES_INFO_REDIS_EXPIRES_SECONDS,json.dumps(h_list))
+            self.redis.setex("My_houses_%s"%self.session.data.get('id'),MYHOUSES_INFO_REDIS_EXPIRES_SECONDS,json.dumps(h_list))
         return self.write({'errno':RET.OK,'errmsg':'OK','houses':h_list})
 
 
@@ -245,6 +246,46 @@ class IndexInfoHandler(BaseHandler):
             house_list.append(hi_tmp)
 
         self.write({"errno":RET.OK,"errmsg":"OK","areas":area_list,"houses":house_list})
+
+
+class HouseListHandler(BaseHandler):
+    """ 搜索页面 """
+    def get(self):
+        # 获取参数
+        aid = self.get_argument('aid','')
+        start_time = self.get_argument('sd','')
+        end_time = self.get_argument('ed','')
+        page = int(self.get_argument('p',1))
+        sort_key = self.get_argument('sk','new')
+        
+        # 参数校验
+
+        # 查询数据
+
+        sort_way = HouseInfo.hi_utime.desc()
+        filter_houses = self.session_sql.query(HouseInfo).order_by(sort_way).filter(HouseInfo.hi_area_id==aid).limit(HOUSE_LIST_PAGE_CAPACITY).offset((page-1)*HOUSE_LIST_PAGE_CAPACITY)
+        data = []
+        print "-"*30
+        for h in filter_houses:
+            print h.hi_title,h.hi_utime
+            owner = self.session_sql.query(UserProfile).filter(UserProfile.up_user_id==h.hi_user_id).first() 
+            data_tmp = {
+                    "house_id":h.hi_house_id,
+                    "image_url":image_url_prefix+h.hi_index_image_url,
+                    "title":h.hi_title,
+                    "room_count":h.hi_room_count,
+                    "order_count":h.hi_order_count,
+                    "address":h.hi_address,
+                    "price":h.hi_price*100,
+                    "avatar":image_url_prefix+owner.up_avatar
+                }
+            data.append(data_tmp)
+        
+        # 返回结果
+        return self.write({"errno":RET.OK,"errmsg":"OK","total_page":3,"data":data})
+
+
+
 
 
 
