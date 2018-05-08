@@ -6,13 +6,14 @@ from sqlalchemy import ForeignKey
 from sqlalchemy import Column,String,Integer,TIMESTAMP,SMALLINT
 from sqlalchemy import DateTime,Date
 from sqlalchemy import VARCHAR,BIGINT,TEXT,CHAR,Boolean
+from sqlalchemy.orm import relationship,backref
 from datetime import datetime
 
 
 if sys.getdefaultencoding() != 'utf-8':
     reload(sys)
     sys.setdefaultencoding('utf-8')
-engine = create_engine('mysql+mysqldb://root:123@localhost:3306/ihome?charset=utf8')
+engine = create_engine('mysql+mysqldb://root:123qwe@localhost:3306/ihome?charset=utf8')
 
 Base = declarative_base()
 
@@ -60,6 +61,8 @@ class HouseInfo(Base):
     hi_online_status = Column(SMALLINT,nullable=False,default=1,comment='0-下线，1-上线')
     hi_index_image_url = Column(VARCHAR(256),nullable=True,comment='房屋主图片')
     hi_utime = Column(DateTime,nullable=False,default=datetime.now(),comment='更新时间')
+    owner = relationship('UserProfile',backref=backref('houses'))
+
 
 class HouseFacility(Base):
     ''' 房屋设施表 '''
@@ -93,7 +96,9 @@ class OrderInfo(Base):
     oi_comment = Column(TEXT,nullable=True,comment='订单评论')
     oi_utime = Column(DateTime,nullable=True,default=datetime.now(),comment='最后更新时间')
     oi_ctime = Column(DateTime,nullable=True,default=datetime.now(),comment='创建时间')
-
+    owner = relationship('UserProfile',backref=backref('order'))
+    house = relationship('HouseInfo',backref=backref('order'))
+    
 
 class House_image(Base):
     '''房屋图片表 '''

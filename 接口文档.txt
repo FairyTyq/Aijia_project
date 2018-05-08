@@ -285,6 +285,13 @@ Method:GET
 
 
 
+15.首页信息
+URL:/api/house/index
+Method:GET
+传入参数
+
+
+
 
 
 

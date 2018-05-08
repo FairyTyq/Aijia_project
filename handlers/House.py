@@ -2,6 +2,7 @@
 
 import logging
 import json
+import math
 
 from .BaseHandler import BaseHandler
 from utils.common import require_logined
@@ -11,6 +12,7 @@ from constants import AREA_INFO_REDIS_EXPIRES_SECONDS,MYHOUSES_INFO_REDIS_EXPIRE
 from constants import HOUSE_LIST_PAGE_CAPACITY,HOUSE_LIST_REDIS_CACHED_PAGE,HOUSE_LIST_REDIS_EXPIRES_SECONDS
 from utils.image_storage import storage
 from config import image_url_prefix
+from sqlalchemy import or_,and_
 
 class AreaInfoHandler(BaseHandler):
     '''区域信息'''
@@ -239,7 +241,7 @@ class IndexInfoHandler(BaseHandler):
             area_list.append(ai_tmp)
         
         #房屋信息获取
-        house_info = self.session_sql.query(HouseInfo).all()
+        house_info = self.session_sql.query(HouseInfo).order_by(HouseInfo.hi_utime.desc()).limit(3)
         house_list = []
         for h in house_info:
             hi_tmp = {"house_id":h.hi_house_id,"img_url":image_url_prefix+h.hi_index_image_url,"title":h.hi_title}
@@ -258,17 +260,38 @@ class HouseListHandler(BaseHandler):
         page = int(self.get_argument('p',1))
         sort_key = self.get_argument('sk','new')
         
-        # 参数校验
+        # 参数校验（待完善）
 
         # 查询数据
+#        if start_time and end_time:
+#            filters = {
+#                    HouseInfo.hi_area_id==aid,
+#                    or_(
+#                    (HouseInfo.order.oi_begin_date < end_time,
+#                    HouseInfo.order.oi_end_date > start_time),
+#                    (HouseInfo.order.oi_begin_date == None,
+#                    HouseInfo.order.oi_end_date == None    
+#                    ))}
+        # 过滤条件（待完善）
+        filters = {HouseInfo.hi_area_id==aid}
 
-        sort_way = HouseInfo.hi_utime.desc()
-        filter_houses = self.session_sql.query(HouseInfo).order_by(sort_way).filter(HouseInfo.hi_area_id==aid).limit(HOUSE_LIST_PAGE_CAPACITY).offset((page-1)*HOUSE_LIST_PAGE_CAPACITY)
+        # 排序条件
+        if sort_key == 'booking':
+            sort_way = HouseInfo.hi_order_count.desc()
+        elif sort_key == 'price-inc':
+            sort_way = HouseInfo.hi_price
+        elif sort_key == 'price-des':
+            sort_way = HouseInfo.hi_price.desc()
+        else:
+            sort_way = HouseInfo.hi_utime.desc()
+        
+        # 从mysql中获取数据
+        filter_tmp = self.session_sql.query(HouseInfo).order_by(sort_way).filter(*filters)
+        filter_houses = filter_tmp.limit(HOUSE_LIST_PAGE_CAPACITY).offset((page-1)*HOUSE_LIST_PAGE_CAPACITY)
         data = []
         print "-"*30
         for h in filter_houses:
             print h.hi_title,h.hi_utime
-            owner = self.session_sql.query(UserProfile).filter(UserProfile.up_user_id==h.hi_user_id).first() 
             data_tmp = {
                     "house_id":h.hi_house_id,
                     "image_url":image_url_prefix+h.hi_index_image_url,
@@ -277,12 +300,14 @@ class HouseListHandler(BaseHandler):
                     "order_count":h.hi_order_count,
                     "address":h.hi_address,
                     "price":h.hi_price*100,
-                    "avatar":image_url_prefix+owner.up_avatar
+                    "avatar":image_url_prefix+h.owner.up_avatar
                 }
             data.append(data_tmp)
-        
+        # 计算总页数
+        list_count = filter_tmp.count()
+        total_page = math.ceil(list_count/float(HOUSE_LIST_PAGE_CAPACITY))
         # 返回结果
-        return self.write({"errno":RET.OK,"errmsg":"OK","total_page":3,"data":data})
+        return self.write({"errno":RET.OK,"errmsg":"OK","total_page":total_page,"data":data})
 
 
 
