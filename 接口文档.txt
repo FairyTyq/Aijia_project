@@ -288,8 +288,20 @@ Method:GET
 15.首页信息
 URL:/api/house/index
 Method:GET
-传入参数
+传入参数：
+	无
 
+返回参数：
+{
+	"errno":0,
+	"errmsg":"OK",
+	"areas":[{"area_id":1,"name":"东城区"},
+			{"area_id":2,"name":"西城区"},...]
+	"houses":[
+		{"house_id":1,"title":"TTILE1","img_url":"http://..."},
+		{"house_id":2,"title":"TTILE2","img_url":"http://..."},
+		...	]
+}
 
 
 

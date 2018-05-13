@@ -7,12 +7,13 @@ import math
 from .BaseHandler import BaseHandler
 from utils.common import require_logined
 from utils.response_code import RET
-from models import AreaInfo,HouseInfo,HouseFacility,House_image,UserProfile
+from models import AreaInfo,HouseInfo,HouseFacility,House_image,UserProfile,OrderInfo
 from constants import AREA_INFO_REDIS_EXPIRES_SECONDS,MYHOUSES_INFO_REDIS_EXPIRES_SECONDS
 from constants import HOUSE_LIST_PAGE_CAPACITY,HOUSE_LIST_REDIS_CACHED_PAGE,HOUSE_LIST_REDIS_EXPIRES_SECONDS
 from utils.image_storage import storage
 from config import image_url_prefix
 from sqlalchemy import or_,and_
+from datetime import datetime
 
 class AreaInfoHandler(BaseHandler):
     '''区域信息'''
@@ -255,25 +256,31 @@ class HouseListHandler(BaseHandler):
     def get(self):
         # 获取参数
         aid = self.get_argument('aid','')
-        start_time = self.get_argument('sd','')
-        end_time = self.get_argument('ed','')
+        starttime = self.get_argument('sd','')
+        endtime = self.get_argument('ed','')
         page = int(self.get_argument('p',1))
         sort_key = self.get_argument('sk','new')
         
-        # 参数校验（待完善）
-
-        # 查询数据
-#        if start_time and end_time:
-#            filters = {
-#                    HouseInfo.hi_area_id==aid,
-#                    or_(
-#                    (HouseInfo.order.oi_begin_date < end_time,
-#                    HouseInfo.order.oi_end_date > start_time),
-#                    (HouseInfo.order.oi_begin_date == None,
-#                    HouseInfo.order.oi_end_date == None    
-#                    ))}
-        # 过滤条件（待完善）
-        filters = {HouseInfo.hi_area_id==aid}
+        # 过滤条件（按时间过滤）
+        if starttime and endtime:
+            start_time = datetime.strptime(starttime,"%Y-%m-%d")
+            end_time = datetime.strptime(endtime,"%Y-%m-%d")
+            fil_date = self.session_sql.query(OrderInfo).filter(and_(OrderInfo.oi_begin_date<=end_time,OrderInfo.oi_end_date>=start_time))
+        elif starttime:
+            start_time = datetime.strptime(starttime,"%Y-%m-%d")
+            fil_date = self.session_sql.query(OrderInfo).filter(OrderInfo.oi_end_date>=start_time)
+        elif endtime:
+            end_time = datetime.strptime(endtime,"%Y-%m-%d")
+            fil_date = self.session_sql.query(OrderInfo).filter(OrderInfo.oi_begin_date<=end_date)
+        else:
+            fil_date=""
+        r_list = []
+        if fil_date:
+            for r in fil_date:
+                r_list.append(r.oi_house_id)
+        r_set = set(r_list)
+        print "r_set :%s"%r_set
+        filters = {and_(HouseInfo.hi_area_id==aid,HouseInfo.hi_house_id.notin_(r_set))}
 
         # 排序条件
         if sort_key == 'booking':
@@ -287,6 +294,7 @@ class HouseListHandler(BaseHandler):
         
         # 从mysql中获取数据
         filter_tmp = self.session_sql.query(HouseInfo).order_by(sort_way).filter(*filters)
+        print "FILTER DATA :%s"%filter_tmp.all()
         filter_houses = filter_tmp.limit(HOUSE_LIST_PAGE_CAPACITY).offset((page-1)*HOUSE_LIST_PAGE_CAPACITY)
         data = []
         print "-"*30

@@ -2,11 +2,13 @@
 
 import os
 
-from handlers import Passport,VerifyCode,Profile,House
+from handlers import Passport,VerifyCode,Profile,House,Order
 # 提取静态文件的Handler
 from handlers.BaseHandler import StaticFileHandler
 
 handlers = [
+	(r'/api/order/my',Order.MyOrderHandler),
+	(r'/api/order',Order.OrderHandler),
 	(r'/api/house/list2',House.HouseListHandler),
 	(r'/api/house/index',House.IndexInfoHandler),
 	(r'/api/house/my',House.MyHouseHandler),
